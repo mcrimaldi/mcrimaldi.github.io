@@ -1,24 +1,23 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Mariano Crimaldi",
+    "label": "Post-Doc Researcher",
     "image": "",
-    "email": "albert@einstein.de",
+    "email": "mariano.crimaldi@unina.it",
     "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
+    "url": "https://mcrimaldi.github.io",
     "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "Department of Agricultural Sciences - University of Naples Federico II",
+      "postalCode": "80055",
+      "city": "Portici (NA)",
+      "countryCode": "IT"
     },
     "profiles": [
       {
         "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "username": "capocchione",
+        "url": "https://twitter.com/capocchione"
       }
     ]
   },
@@ -151,13 +150,13 @@
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker",
+      "language": "English",
+      "fluency": "Fluent",
       "icon": ""
     },
     {
-      "language": "English",
-      "fluency": "Fluent",
+      "language": "Italian",
+      "fluency": "Native Speaker",
       "icon": ""
     }
   ],
