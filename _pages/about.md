@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Personal landing page of Mariano Crimaldi
+subtitle: Post-Doc Researcher @ UniNa - Department of Agricultural Sciences
 
 profile:
   align: right
