@@ -25,7 +25,7 @@ My expertise ranges from wastewater treatment to sensors and everything in betwe
 
 Outside of Academia, I am an enthusiastic MTBer, bikepacker and traveler, a faithful husband and a caring father.
 
-If you want, you can check out my work projects in the [work](https://mcrimaldi.github.io/projects/#work) section and my adventures in the [life](https://mcrimaldi.github.io/projects/#life) section.
+If you want, you can check out my work projects in the [work](https://mcrimaldi.github.io/projects/#work) section and my adventures in the [fun](https://mcrimaldi.github.io/projects/#fun) section.
 
 ### Real time metrics from Google Scholar:
 * [Profile](https://scholar.google.com/citations?user={{ site.data.scholar.id }})
