@@ -1,6 +1,6 @@
 {
   "info": {
-    "email": "name.surname@unina.it",
+    "email": "mariano.crimaldi@unina.it",
     "location": "Portici (NA), Italy",
     "institution": "Università degli Studi di Napoli Federico II",
     "department": "Department of Agricultural Sciences",
@@ -41,7 +41,7 @@
     }
   ],
   "form": {
-    "enabled": true,
+    "enabled": false,
     "fields": [
       {
         "name": "name",

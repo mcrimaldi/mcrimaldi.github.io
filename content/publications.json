@@ -6,15 +6,15 @@
   },
 
   "_comment": "=== SCOPUS CONFIGURATION (Priority 1) ===",
-  "scopusApiKey": "YOUR_SCOPUS_API_KEY_HERE",
-  "scopusAuthorId": "YOUR_SCOPUS_AUTHOR_ID_HERE",
+  "scopusApiKey": "f99a72cc2a8602139041737ad867ba8f",
+  "scopusAuthorId": "57191481522",
 
   "_comment2": "=== OPENALEX CONFIGURATION (Priority 2 / Fallback) ===",
   "openAlexId": null,
-  "orcid": null,
+  "orcid": "0000-0002-4579-5682",
 
   "_comment3": "=== ADDITIONAL PROFILE LINKS ===",
-  "scholarProfile": "https://scholar.google.com/citations?user=YOUR_ID",
+  "scholarProfile": "https://scholar.google.com/citations?user=Ofzq0M4AAAAJ",
 
   "_example_scopus": {
     "scopusApiKey": "abc123def456...",
@@ -37,7 +37,7 @@
   "_fallback_static_data_comment": "If no API works, this static data will be used:",
   
   "metrics": {
-    "hIndex": 0,
+    "hIndex": 13,
     "i10Index": 0,
     "totalCitations": 0,
     "worksCount": 0,
