@@ -1,0 +1,44 @@
+{
+  "categories": [
+    {
+      "name": "Scientific Instrumentation",
+      "skills": [
+        { "name": "Spectroscopy (FTIR, UV-Vis)", "level": 90 },
+        { "name": "Chromatography (HPLC, GC)", "level": 88 },
+        { "name": "Mass Spectrometry", "level": 82 },
+        { "name": "Microscopy & Imaging", "level": 85 },
+        { "name": "Environmental Sensors", "level": 92 }
+      ]
+    },
+    {
+      "name": "Data Analysis & Programming",
+      "skills": [
+        { "name": "R / RStudio", "level": 90 },
+        { "name": "Python", "level": 85 },
+        { "name": "Statistical Analysis", "level": 92 },
+        { "name": "GIS & Remote Sensing", "level": 78 },
+        { "name": "Database Management", "level": 80 }
+      ]
+    },
+    {
+      "name": "Agricultural Technologies",
+      "skills": [
+        { "name": "Precision Agriculture", "level": 88 },
+        { "name": "IoT Sensor Networks", "level": 85 },
+        { "name": "Soil & Plant Analysis", "level": 90 },
+        { "name": "Climate Monitoring Systems", "level": 82 },
+        { "name": "Drone & UAV Applications", "level": 75 }
+      ]
+    },
+    {
+      "name": "Laboratory & Research Support",
+      "skills": [
+        { "name": "Method Development", "level": 88 },
+        { "name": "Quality Assurance", "level": 90 },
+        { "name": "Equipment Maintenance", "level": 92 },
+        { "name": "Safety Compliance", "level": 95 },
+        { "name": "Technical Documentation", "level": 88 }
+      ]
+    }
+  ]
+}

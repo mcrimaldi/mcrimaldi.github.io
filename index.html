@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eng. Mariano Crimaldi, Ph.D. - Scientific and Technologic Officer at University of Naples Federico II, Department of Agricultural Sciences">
+  <meta name="theme-color" content="#00ff00">
+  
+  <title>Eng. Mariano Crimaldi, Ph.D. | Scientific and Technologic Officer</title>
+  
+  <!-- Preconnect to font sources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨</text></svg>">
+  
+  <style>
+    /* Critical CSS for fast initial render */
+    :root {
+      --terminal-primary: #00ff00;
+      --terminal-background: #0a0a0a;
+      --terminal-text: #00ff00;
+      --terminal-glow: #00ff00;
+    }
+    
+    body {
+      background: #0a0a0a;
+      color: #00ff00;
+      font-family: 'IBM Plex Mono', monospace;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Loading state */
+    .terminal-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-size: 1rem;
+    }
+    
+    .loading-spinner {
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- CRT Effects Overlay -->
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="crt-overlay" aria-hidden="true"></div>
+  
+  <!-- Main Terminal Container -->
+  <main class="terminal-container" role="main">
+    <div class="terminal-window">
+      
+      <!-- Terminal Window Chrome -->
+      <header class="terminal-header">
+        <div class="terminal-buttons" aria-hidden="true">
+          <span class="terminal-button terminal-button--close"></span>
+          <span class="terminal-button terminal-button--minimize"></span>
+          <span class="terminal-button terminal-button--maximize"></span>
+        </div>
+        <div class="terminal-title">visitor@portfolio:~</div>
+        <nav class="terminal-menu" aria-label="Terminal controls">
+          <button class="terminal-menu-item" data-action="theme" title="Cycle theme (T)">Theme</button>
+          <button class="terminal-menu-item" data-action="effects" title="Toggle effects (E)">Effects</button>
+          <button class="terminal-menu-item" data-action="help" title="Show help (?)">Help</button>
+        </nav>
+      </header>
+      
+      <!-- Terminal Body -->
+      <div class="terminal-body" id="terminal-output">
+        
+        <!-- ASCII Art Header -->
+        <pre class="ascii-header" aria-label="Eng. Mariano Crimaldi, Ph.D.">
+ ███╗   ███╗ █████╗ ██████╗ ██╗ █████╗ ███╗   ██╗ ██████╗ 
+ ████╗ ████║██╔══██╗██╔══██╗██║██╔══██╗████╗  ██║██╔═══██╗
+ ██╔████╔██║███████║██████╔╝██║███████║██╔██╗ ██║██║   ██║
+ ██║╚██╔╝██║██╔══██║██╔══██╗██║██╔══██║██║╚██╗██║██║   ██║
+ ██║ ╚═╝ ██║██║  ██║██║  ██║██║██║  ██║██║ ╚████║╚██████╔╝
+ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+  ██████╗██████╗ ██╗███╗   ███╗ █████╗ ██╗     ██████╗ ██╗
+ ██╔════╝██╔══██╗██║████╗ ████║██╔══██╗██║     ██╔══██╗██║
+ ██║     ██████╔╝██║██╔████╔██║███████║██║     ██║  ██║██║
+ ██║     ██╔══██╗██║██║╚██╔╝██║██╔══██║██║     ██║  ██║██║
+ ╚██████╗██║  ██║██║██║ ╚═╝ ██║██║  ██║███████╗██████╔╝██║
+  ╚═════╝╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝
+        </pre>
+        <p class="ascii-subtitle">Eng. Mariano Crimaldi, Ph.D. • Scientific and Technologic Officer</p>
+        <p class="ascii-affiliation">Università degli Studi di Napoli Federico II • Dipartimento di Agraria</p>
+        
+        <!-- Boot Sequence -->
+        <div class="boot-sequence" id="boot-sequence" aria-live="polite">
+          <!-- Boot messages will be injected here -->
+        </div>
+        
+        <!-- Sections Container -->
+        <div class="terminal-sections" id="terminal-sections" role="region" aria-label="Portfolio sections">
+          <!-- Section plugins will be mounted here -->
+        </div>
+        
+        <!-- Command Input (visual only, for aesthetics) -->
+        <div class="terminal-line terminal-input-line">
+          <span class="terminal-prompt">visitor@portfolio:~</span>
+          <span class="terminal-command">
+            <span class="input-text"></span>
+            <span class="terminal-cursor">█</span>
+          </span>
+        </div>
+        
+      </div>
+      
+      <!-- Terminal Footer -->
+      <footer class="terminal-footer">
+        <div class="footer-left">
+          <span class="status-indicator">● ONLINE</span>
+          <span class="system-info">v1.0.0</span>
+        </div>
+        <div class="theme-switcher" role="group" aria-label="Theme selector">
+          <!-- Theme buttons will be added by JS -->
+        </div>
+        <div class="footer-right">
+          <span class="keyboard-hint" title="Press ? for help">Press <kbd>?</kbd> for shortcuts</span>
+        </div>
+      </footer>
+      
+    </div>
+  </main>
+  
+  <!-- Screen Reader Announcements -->
+  <div id="terminal-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+  
+  <!-- Loading Fallback (shown while JS loads) -->
+  <noscript>
+    <div class="terminal-container">
+      <div class="terminal-window">
+        <div class="terminal-body">
+          <p class="text-warning">[WARNING] JavaScript is required to run this terminal.</p>
+          <p>Please enable JavaScript to view this interactive portfolio.</p>
+        </div>
+      </div>
+    </div>
+  </noscript>
+  
+  <!-- Application Entry Point -->
+  <script type="module" src="js/main.js"></script>
+  
+  <!-- Menu button handlers -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.terminal-menu-item').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const action = btn.dataset.action;
+          // Dispatch custom event that main.js will handle
+          document.dispatchEvent(new CustomEvent('terminal:menu', { 
+            detail: { action } 
+          }));
+        });
+      });
+    });
+  </script>
+</body>
+</html>

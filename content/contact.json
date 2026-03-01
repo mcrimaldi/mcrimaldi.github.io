@@ -1,0 +1,91 @@
+{
+  "info": {
+    "email": "name.surname@unina.it",
+    "location": "Portici (NA), Italy",
+    "institution": "Università degli Studi di Napoli Federico II",
+    "department": "Department of Agricultural Sciences",
+    "building": "Via Università 100, 80055 Portici",
+    "availability": "Available for research collaborations",
+    "responseTime": "Usually within 48 hours"
+  },
+  "social": [
+    {
+      "platform": "ORCID",
+      "username": "0000-0000-0000-0000",
+      "url": "https://orcid.org/",
+      "icon": "◉"
+    },
+    {
+      "platform": "ResearchGate",
+      "username": "Profile",
+      "url": "https://www.researchgate.net/",
+      "icon": "◈"
+    },
+    {
+      "platform": "Google Scholar",
+      "username": "Citations",
+      "url": "https://scholar.google.com/",
+      "icon": "✦"
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "Professional Profile",
+      "url": "https://www.linkedin.com/",
+      "icon": "⌂"
+    },
+    {
+      "platform": "Department",
+      "username": "UNINA Agraria",
+      "url": "https://www.agraria.unina.it/",
+      "icon": "▣"
+    }
+  ],
+  "form": {
+    "enabled": true,
+    "fields": [
+      {
+        "name": "name",
+        "label": "Your Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "Dr. Mario Rossi"
+      },
+      {
+        "name": "email",
+        "label": "Email Address",
+        "type": "email",
+        "required": true,
+        "placeholder": "mario.rossi@institution.edu"
+      },
+      {
+        "name": "affiliation",
+        "label": "Institution/Affiliation",
+        "type": "text",
+        "required": false,
+        "placeholder": "University or Organisation"
+      },
+      {
+        "name": "subject",
+        "label": "Subject",
+        "type": "text",
+        "required": true,
+        "placeholder": "Research collaboration, Technical inquiry..."
+      },
+      {
+        "name": "message",
+        "label": "Message",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Describe your inquiry or collaboration proposal..."
+      }
+    ],
+    "submitText": "send_message()",
+    "successMessage": "Message sent successfully. I will respond within 48 hours.",
+    "errorMessage": "Failed to send message. Please contact me directly via institutional email."
+  },
+  "calendar": {
+    "enabled": false,
+    "url": "",
+    "text": ""
+  }
+}

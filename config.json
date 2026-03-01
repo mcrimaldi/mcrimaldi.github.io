@@ -1,0 +1,17 @@
+{
+  "terminal": {
+    "typingSpeed": 30,
+    "bootDelay": 100,
+    "showBootSequence": true
+  },
+  "theme": {
+    "default": "green-classic"
+  },
+  "effects": {
+    "scanlines": true,
+    "glow": true,
+    "cursor": true,
+    "typing": true
+  },
+  "debug": false
+}

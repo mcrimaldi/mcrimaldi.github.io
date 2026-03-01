@@ -1,0 +1,75 @@
+{
+  "experience": [
+    {
+      "id": "sto-unina",
+      "title": "Scientific and Technologic Officer",
+      "company": "Università degli Studi di Napoli Federico II",
+      "department": "Department of Agricultural Sciences",
+      "location": "Portici (NA), Italy",
+      "startDate": "2019-03",
+      "endDate": null,
+      "current": true,
+      "description": "Providing comprehensive technical and scientific support for research activities within the Department of Agricultural Sciences, managing laboratory instrumentation, and developing data analysis solutions.",
+      "achievements": [
+        "Established and maintained IoT sensor networks for precision agriculture research across multiple experimental sites",
+        "Developed automated data pipelines reducing analysis time by 60% for routine soil and plant characterisation",
+        "Implemented laboratory information management system serving 4 analytical laboratories",
+        "Coordinated technical aspects of 8 funded research projects (Horizon Europe, PRIN, PSR)",
+        "Trained 25+ PhD students and researchers on analytical instrumentation and data analysis methods"
+      ],
+      "technologies": ["FTIR/NIR Spectroscopy", "HPLC", "GC-MS", "R", "Python", "PostgreSQL", "IoT/LoRaWAN"]
+    },
+    {
+      "id": "research-fellow-unina",
+      "title": "Research Fellow",
+      "company": "Università degli Studi di Napoli Federico II",
+      "department": "Department of Agricultural Sciences",
+      "location": "Portici (NA), Italy",
+      "startDate": "2016-01",
+      "endDate": "2019-02",
+      "current": false,
+      "description": "Conducted research on soil quality assessment and sustainable agricultural practices, with a focus on developing rapid analytical methods using spectroscopic techniques.",
+      "achievements": [
+        "Led development of chemometric models for soil carbon prediction using mid-infrared spectroscopy",
+        "Co-authored 6 peer-reviewed publications in high-impact journals",
+        "Presented research at 4 international conferences including EGU and Eurosoil",
+        "Contributed to successful grant applications totalling €450,000"
+      ],
+      "technologies": ["Spectroscopy", "Chemometrics", "R", "Soil Analysis", "GIS"]
+    },
+    {
+      "id": "phd-unina",
+      "title": "PhD Researcher",
+      "company": "Università degli Studi di Napoli Federico II",
+      "department": "Department of Agricultural Sciences",
+      "location": "Portici (NA), Italy",
+      "startDate": "2012-11",
+      "endDate": "2015-12",
+      "current": false,
+      "description": "Doctoral research focused on advanced analytical techniques for soil quality monitoring in Mediterranean agroecosystems.",
+      "achievements": [
+        "Completed PhD thesis on spectroscopic methods for soil organic matter characterisation",
+        "Developed novel sample preparation protocols adopted by the department's soil laboratory",
+        "Visiting researcher at Wageningen University (3 months) for advanced chemometrics training",
+        "Recipient of departmental award for best PhD thesis"
+      ],
+      "technologies": ["FTIR", "NMR Spectroscopy", "Thermal Analysis", "Multivariate Statistics"]
+    },
+    {
+      "id": "msc-unina",
+      "title": "MSc in Agricultural Sciences",
+      "company": "Università degli Studi di Napoli Federico II",
+      "location": "Portici (NA), Italy",
+      "startDate": "2010-09",
+      "endDate": "2012-10",
+      "current": false,
+      "description": "Master's degree programme in Agricultural Sciences and Technologies, with specialisation in soil science and environmental management.",
+      "achievements": [
+        "Graduated with distinction (110/110 cum laude)",
+        "Thesis on soil erosion assessment using GIS and remote sensing",
+        "Erasmus exchange at University of Copenhagen, Department of Plant and Environmental Sciences"
+      ],
+      "technologies": ["GIS", "Remote Sensing", "Soil Science", "Environmental Modelling"]
+    }
+  ]
+}

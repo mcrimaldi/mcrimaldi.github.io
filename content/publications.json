@@ -1,0 +1,48 @@
+{
+  "_instructions": {
+    "scopus": "For Scopus: add your API key and Author ID (found in your Scopus profile URL)",
+    "openAlex": "Alternative: use OpenAlex ID or ORCID (free, no API key required)",
+    "priority": "If Scopus credentials are provided, Scopus is used first. Otherwise OpenAlex is used as fallback."
+  },
+
+  "_comment": "=== SCOPUS CONFIGURATION (Priority 1) ===",
+  "scopusApiKey": "YOUR_SCOPUS_API_KEY_HERE",
+  "scopusAuthorId": "YOUR_SCOPUS_AUTHOR_ID_HERE",
+
+  "_comment2": "=== OPENALEX CONFIGURATION (Priority 2 / Fallback) ===",
+  "openAlexId": null,
+  "orcid": null,
+
+  "_comment3": "=== ADDITIONAL PROFILE LINKS ===",
+  "scholarProfile": "https://scholar.google.com/citations?user=YOUR_ID",
+
+  "_example_scopus": {
+    "scopusApiKey": "abc123def456...",
+    "scopusAuthorId": "57200123456"
+  },
+
+  "_example_openalex": {
+    "openAlexId": "A5023888391",
+    "orcid": "0000-0002-1825-0097"
+  },
+
+  "_how_to_find_scopus_author_id": [
+    "1. Go to www.scopus.com",
+    "2. Search for your name in 'Authors'",
+    "3. Click on your profile",
+    "4. The Author ID is in the URL: scopus.com/authid/detail.uri?authorId=XXXXXXXX",
+    "5. Copy the number (e.g., 57200123456)"
+  ],
+
+  "_fallback_static_data_comment": "If no API works, this static data will be used:",
+  
+  "metrics": {
+    "hIndex": 0,
+    "i10Index": 0,
+    "totalCitations": 0,
+    "worksCount": 0,
+    "lastUpdated": "2025-02-13",
+    "source": "Local"
+  },
+  "publications": []
+}

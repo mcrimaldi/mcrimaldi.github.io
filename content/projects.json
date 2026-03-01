@@ -1,0 +1,101 @@
+{
+  "projects": [
+    {
+      "id": "smart-vineyard",
+      "name": "smart-vineyard-monitoring",
+      "title": "Smart Vineyard Monitoring System",
+      "description": "Development and deployment of an integrated IoT sensor network for real-time monitoring of microclimatic conditions, soil moisture, and plant stress indicators across experimental vineyards in the Campania region.",
+      "permissions": "drwxr-xr-x",
+      "size": "2.8M",
+      "date": "Jan 24",
+      "technologies": ["IoT Sensors", "LoRaWAN", "Python", "PostgreSQL", "Grafana", "R"],
+      "highlights": [
+        "Deployed 45+ environmental sensors across 3 experimental sites",
+        "Developed automated alert system for irrigation management",
+        "Contributed to 2 peer-reviewed publications"
+      ],
+      "links": {
+        "department": "https://www.agraria.unina.it",
+        "publication": "#"
+      },
+      "status": "active"
+    },
+    {
+      "id": "soil-spectral-library",
+      "name": "soil-spectral-library",
+      "title": "Regional Soil Spectral Library",
+      "description": "Creation of a comprehensive spectral database for Campanian agricultural soils using FTIR and NIR spectroscopy, enabling rapid soil characterisation and reducing the need for traditional wet chemistry analyses.",
+      "permissions": "drwxr-xr-x",
+      "size": "4.5M",
+      "date": "Nov 23",
+      "technologies": ["FTIR Spectroscopy", "NIR", "Chemometrics", "R", "Machine Learning"],
+      "highlights": [
+        "Catalogued 800+ soil samples with full spectral profiles",
+        "Developed PLS regression models with R² > 0.92 for key parameters",
+        "Reduced analysis time by 70% compared to traditional methods"
+      ],
+      "links": {
+        "department": "https://www.agraria.unina.it"
+      },
+      "status": "active"
+    },
+    {
+      "id": "olive-phenotyping",
+      "name": "olive-phenotyping-platform",
+      "title": "High-Throughput Olive Phenotyping",
+      "description": "Implementation of automated image analysis pipeline for phenotypic characterisation of olive cultivars, supporting breeding programmes and germplasm conservation efforts.",
+      "permissions": "-rwxr-xr-x",
+      "size": "1.2M",
+      "date": "Sep 23",
+      "technologies": ["Python", "OpenCV", "ImageJ", "Deep Learning", "UAV Imaging"],
+      "highlights": [
+        "Processed 15,000+ plant images with automated feature extraction",
+        "Trained CNN model for disease symptom detection (94% accuracy)",
+        "Integrated with departmental LIMS for streamlined data management"
+      ],
+      "links": {
+        "github": "#",
+        "department": "https://www.agraria.unina.it"
+      },
+      "status": "active"
+    },
+    {
+      "id": "ghg-monitoring",
+      "name": "agricultural-ghg-monitoring",
+      "title": "Agricultural GHG Emissions Monitoring",
+      "description": "Establishment of continuous greenhouse gas monitoring infrastructure for quantifying carbon and nitrogen fluxes in Mediterranean agroecosystems under different management practices.",
+      "permissions": "drwxr-xr-x",
+      "size": "3.1M",
+      "date": "Jun 23",
+      "technologies": ["Eddy Covariance", "Gas Chromatography", "LICOR Systems", "R", "NetCDF"],
+      "highlights": [
+        "Installed and maintained 2 eddy covariance towers",
+        "Established standardised protocols for flux data processing",
+        "Data contributed to European ICOS network"
+      ],
+      "links": {
+        "department": "https://www.agraria.unina.it"
+      },
+      "status": "maintenance"
+    },
+    {
+      "id": "lab-lims",
+      "name": "agraria-lims",
+      "title": "Laboratory Information Management System",
+      "description": "Design and implementation of a custom LIMS solution for the department's analytical laboratories, improving sample tracking, data integrity, and regulatory compliance.",
+      "permissions": "-rwxr-xr-x",
+      "size": "956K",
+      "date": "Mar 23",
+      "technologies": ["Python", "Django", "PostgreSQL", "Docker", "REST API"],
+      "highlights": [
+        "Manages 5,000+ samples annually across 4 laboratories",
+        "Automated reporting reduced administrative workload by 40%",
+        "Full audit trail for ISO 17025 compliance"
+      ],
+      "links": {
+        "department": "https://www.agraria.unina.it"
+      },
+      "status": "active"
+    }
+  ]
+}
