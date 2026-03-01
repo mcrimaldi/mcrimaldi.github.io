@@ -66,14 +66,13 @@ class PublicationsSection extends SectionPlugin {
       const apiKey = config.scopusApiKey;
       const authorId = config.scopusAuthorId;
       
-      // Fetch author metrics with METRICS view to get h-index
-      const authorUrl = `https://api.elsevier.com/content/author/author_id/${authorId}?view=METRICS`;
+      // For browser/client-side requests, API key must be passed as URL parameter
+      // Headers cause CORS issues with Scopus API
+      const authorUrl = `https://api.elsevier.com/content/author/author_id/${authorId}?apiKey=${apiKey}&view=METRICS&httpAccept=application/json`;
       
       const authorResponse = await fetch(authorUrl, {
-        headers: {
-          'Accept': 'application/json',
-          'X-ELS-APIKey': apiKey
-        }
+        method: 'GET',
+        mode: 'cors'
       });
 
       if (!authorResponse.ok) {
@@ -84,13 +83,11 @@ class PublicationsSection extends SectionPlugin {
       const authorData = await authorResponse.json();
 
       // Fetch publications sorted by citation count
-      const searchUrl = `https://api.elsevier.com/content/search/scopus?query=AU-ID(${authorId})&sort=-citedby-count&count=50`;
+      const searchUrl = `https://api.elsevier.com/content/search/scopus?apiKey=${apiKey}&query=AU-ID(${authorId})&sort=-citedby-count&count=50&httpAccept=application/json`;
       
       const searchResponse = await fetch(searchUrl, {
-        headers: {
-          'Accept': 'application/json',
-          'X-ELS-APIKey': apiKey
-        }
+        method: 'GET',
+        mode: 'cors'
       });
 
       if (!searchResponse.ok) {
