@@ -1,6 +1,6 @@
 {
   "terminal": {
-    "typingSpeed": 30,
+    "typingSpeed": 60,
     "bootDelay": 100,
     "showBootSequence": true
   },

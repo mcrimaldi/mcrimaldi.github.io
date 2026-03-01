@@ -6,7 +6,7 @@
   },
 
   "_comment": "=== SCOPUS CONFIGURATION (Priority 1) ===",
-  "scopusApiKey": "f99a72cc2a8602139041737ad867ba8f",
+  "scopusApiKey": "52023acc470f2d2f0d716ec08d64253c",
   "scopusAuthorId": "57191481522",
 
   "_comment2": "=== OPENALEX CONFIGURATION (Priority 2 / Fallback) ===",
