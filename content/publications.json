@@ -10,7 +10,7 @@
   "scopusAuthorId": "57191481522",
 
   "_comment2": "=== OPENALEX CONFIGURATION (Priority 2 / Fallback) ===",
-  "openAlexId": null,
+  "openAlexId": "A5049741642",
   "orcid": "0000-0002-4579-5682",
 
   "_comment3": "=== ADDITIONAL PROFILE LINKS ===",
@@ -38,10 +38,10 @@
   
   "metrics": {
     "hIndex": 13,
-    "i10Index": 0,
-    "totalCitations": 0,
-    "worksCount": 0,
-    "lastUpdated": "2025-02-13",
+    "i10Index": 13,
+    "totalCitations": 600,
+    "worksCount": 32,
+    "lastUpdated": "2026-03-01",
     "source": "Local"
   },
   "publications": []
