@@ -2,7 +2,7 @@
   "terminal": {
     "typingSpeed": 100,
     "bootDelay": 20,
-    "showBootSequence": true
+    "showBootSequence": false
   },
   "theme": {
     "default": "purple-haze"
