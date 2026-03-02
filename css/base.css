@@ -1347,9 +1347,9 @@ pre code {
 }
 
 .info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
 
@@ -1357,6 +1357,12 @@ pre code {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--terminal-border-dim);
+}
+
+.info-item:last-child {
+  border-bottom: none;
 }
 
 .info-icon {

@@ -64,7 +64,7 @@ class ContactSection extends SectionPlugin {
     container.innerHTML = `<pre>
     ╔═══════════════════════════════════╗
     ║  ┌─────────────────────────────┐  ║
-    ║  │     📨  GET IN TOUCH  📨    │  ║
+    ║  │     📨  GET IN TOUCH  📨   │  ║
     ║  └─────────────────────────────┘  ║
     ║    Let's build something great    ║
     ╚═══════════════════════════════════╝
