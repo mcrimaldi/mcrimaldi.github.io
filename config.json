@@ -1,7 +1,7 @@
 {
   "terminal": {
     "typingSpeed": 100,
-    "bootDelay": 100,
+    "bootDelay": 20,
     "showBootSequence": true
   },
   "theme": {
