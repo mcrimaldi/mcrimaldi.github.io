@@ -47,22 +47,44 @@ git push origin main
 
 ## ⚙️ Configuration
 
-### Publications (Scopus API)
+### Publications - Two Options
 
-Edit `content/publications.json`:
+#### Option 1: OpenAlex/ORCID (Recommended - No API Key Needed!)
+
+Edit `content/publications.json` and add your ORCID:
 
 ```json
 {
-  "scopusApiKey": "YOUR_SCOPUS_API_KEY",
-  "scopusAuthorId": "YOUR_AUTHOR_ID",
-  "scholarProfile": "https://scholar.google.com/citations?user=YOUR_ID"
+  "orcid": "0000-0002-1234-5678",
+  "scholarProfile": "https://scholar.google.com/citations?user=YOUR_ID",
+  "scopusProfile": "https://www.scopus.com/authid/detail.uri?authorId=YOUR_ID"
 }
 ```
 
-**Find your Scopus Author ID:**
-1. Go to [scopus.com](https://www.scopus.com)
-2. Search your name in "Authors"
-3. Copy the ID from the URL: `authorId=XXXXXXXX`
+✅ **That's it!** OpenAlex will fetch your publications automatically.
+
+**Find your ORCID:** Go to [orcid.org](https://orcid.org) and sign in (or register).
+
+#### Option 2: Scopus Data (Requires Local Script)
+
+Scopus API doesn't support browser requests, so you need to fetch data locally:
+
+1. **Create `.env` file** (copy from `.env.example`):
+   ```
+   SCOPUS_API_KEY=your_api_key_here
+   SCOPUS_AUTHOR_ID=57191481522
+   ```
+
+2. **Run the fetch script:**
+   ```bash
+   node fetch-scopus.js
+   ```
+
+3. **Commit and push** the updated `content/publications.json`
+
+⚠️ **Security:** The `.env` file is in `.gitignore` and will NOT be uploaded to GitHub.
+
+---
 
 ### Profile Information
 

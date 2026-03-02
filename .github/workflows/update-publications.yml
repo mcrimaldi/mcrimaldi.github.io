@@ -1,0 +1,131 @@
+name: Update Publications from Scopus
+
+on:
+  # Run manually from GitHub Actions tab
+  workflow_dispatch:
+  
+  # Run automatically every Sunday at 2:00 AM UTC
+  schedule:
+    - cron: '0 2 * * 0'
+  
+  # Run on push to main (optional, remove if not needed)
+  # push:
+  #   branches: [main]
+
+jobs:
+  update-publications:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Fetch Scopus Data
+        env:
+          SCOPUS_API_KEY: ${{ secrets.SCOPUS_API_KEY }}
+          SCOPUS_AUTHOR_ID: ${{ secrets.SCOPUS_AUTHOR_ID }}
+        run: |
+          # Fetch author metrics
+          echo "Fetching author metrics..."
+          AUTHOR_DATA=$(curl -s -H "Accept: application/json" \
+            -H "X-ELS-APIKey: ${SCOPUS_API_KEY}" \
+            "https://api.elsevier.com/content/author/author_id/${SCOPUS_AUTHOR_ID}?view=METRICS")
+          
+          # Fetch publications
+          echo "Fetching publications..."
+          PUBS_DATA=$(curl -s -H "Accept: application/json" \
+            -H "X-ELS-APIKey: ${SCOPUS_API_KEY}" \
+            "https://api.elsevier.com/content/search/scopus?query=AU-ID(${SCOPUS_AUTHOR_ID})&sort=-citedby-count&count=50")
+          
+          # Create Node.js script to process data
+          cat > process_scopus.js << 'SCRIPT'
+          const fs = require('fs');
+          
+          const authorData = JSON.parse(process.env.AUTHOR_DATA || '{}');
+          const pubsData = JSON.parse(process.env.PUBS_DATA || '{}');
+          
+          // Extract author info
+          const authorProfile = authorData['author-retrieval-response']?.[0] || {};
+          const coredata = authorProfile?.coredata || {};
+          
+          // Get h-index from multiple possible locations
+          let hIndex = 0;
+          if (authorProfile?.['h-index']) {
+            hIndex = parseInt(authorProfile['h-index']) || 0;
+          } else if (coredata?.['h-index']) {
+            hIndex = parseInt(coredata['h-index']) || 0;
+          }
+          
+          // Get preferred name
+          const preferredName = authorProfile?.['author-profile']?.['preferred-name'] || {};
+          const authorName = `${preferredName['given-name'] || ''} ${preferredName['surname'] || ''}`.trim();
+          
+          // Get affiliation
+          const affiliationData = authorProfile?.['author-profile']?.['affiliation-current']?.affiliation;
+          const affiliation = Array.isArray(affiliationData) 
+            ? affiliationData[0]?.['ip-doc']?.['afdispname'] || ''
+            : affiliationData?.['ip-doc']?.['afdispname'] || '';
+          
+          // Process publications
+          const entries = pubsData['search-results']?.entry || [];
+          const publications = entries.map(entry => ({
+            title: entry['dc:title'] || 'Untitled',
+            authors: entry['dc:creator'] || '',
+            journal: entry['prism:publicationName'] || '',
+            year: entry['prism:coverDate']?.substring(0, 4) || '',
+            volume: entry['prism:volume'] || '',
+            issue: entry['prism:issueIdentifier'] || '',
+            pages: entry['prism:pageRange'] || '',
+            citations: parseInt(entry['citedby-count']) || 0,
+            url: entry['prism:doi'] ? `https://doi.org/${entry['prism:doi']}` : '#',
+            openAccess: entry['openaccess'] === '1',
+            type: entry['subtypeDescription'] || 'Article'
+          }));
+          
+          // Calculate i10-index
+          const i10Index = publications.filter(p => p.citations >= 10).length;
+          
+          // Create final JSON
+          const result = {
+            _generatedAt: new Date().toISOString(),
+            _source: 'Scopus API via GitHub Actions',
+            
+            authorName: authorName,
+            affiliation: affiliation,
+            scopusProfile: `https://www.scopus.com/authid/detail.uri?authorId=${process.env.SCOPUS_AUTHOR_ID}`,
+            
+            metrics: {
+              hIndex: hIndex,
+              i10Index: i10Index,
+              totalCitations: parseInt(coredata['citation-count']) || 0,
+              worksCount: parseInt(coredata['document-count']) || publications.length,
+              lastUpdated: new Date().toISOString().split('T')[0],
+              source: 'Scopus'
+            },
+            
+            publications: publications
+          };
+          
+          fs.writeFileSync('content/publications.json', JSON.stringify(result, null, 2));
+          console.log(`✓ Saved ${publications.length} publications`);
+          console.log(`✓ h-index: ${hIndex}, citations: ${result.metrics.totalCitations}`);
+          SCRIPT
+          
+          # Run the processing script
+          AUTHOR_DATA="$AUTHOR_DATA" PUBS_DATA="$PUBS_DATA" SCOPUS_AUTHOR_ID="$SCOPUS_AUTHOR_ID" node process_scopus.js
+          
+          # Cleanup
+          rm process_scopus.js
+      
+      - name: Commit and Push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add content/publications.json
+          git diff --staged --quiet || git commit -m "📚 Update publications from Scopus [$(date +'%Y-%m-%d')]"
+          git push

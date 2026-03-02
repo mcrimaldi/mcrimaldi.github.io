@@ -1,11 +1,11 @@
 {
   "terminal": {
-    "typingSpeed": 60,
+    "typingSpeed": 30,
     "bootDelay": 100,
     "showBootSequence": true
   },
   "theme": {
-    "default": "purple-haze"
+    "default": "green-classic"
   },
   "effects": {
     "scanlines": true,
