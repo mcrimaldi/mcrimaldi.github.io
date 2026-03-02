@@ -3,7 +3,7 @@
     {
       "name": "Scientific Instrumentation",
       "skills": [
-        { "name": "Spectroscopy (FTIR, UV-Vis)", "level": 90 },
+        { "name": "Spectroscopy (FTIR, UV-Vis)", "level": 80 },
         { "name": "Chromatography (HPLC, GC)", "level": 88 },
         { "name": "Mass Spectrometry", "level": 82 },
         { "name": "Microscopy & Imaging", "level": 85 },
