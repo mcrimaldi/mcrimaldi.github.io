@@ -52,9 +52,7 @@ class ContactSection extends SectionPlugin {
     const socialLinks = this._createSocialLinks();
     wrapper.appendChild(socialLinks);
 
-    // Contact form (terminal style)
-    const form = this._createContactForm();
-    wrapper.appendChild(form);
+    // Contact form removed - using email/social links instead
 
     body.appendChild(wrapper);
   }

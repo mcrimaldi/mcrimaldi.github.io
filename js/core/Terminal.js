@@ -326,12 +326,12 @@ class Terminal {
     const bootDelay = config.get('terminal.bootDelay');
     
     this._bootLines = [
-      { text: 'Initializing terminal...', delay: 100 },
-      { text: 'Loading system modules...', delay: 150 },
-      { text: 'Mounting content adapters...', delay: 100 },
-      { text: 'Activating visual effects...', delay: 100 },
-      { text: 'System ready.', delay: 200 },
-      { text: '', delay: 100 },
+      { text: 'Initializing terminal...', delay: 30 },
+      { text: 'Loading system modules...', delay: 40 },
+      { text: 'Mounting content adapters...', delay: 30 },
+      { text: 'Activating visual effects...', delay: 30 },
+      { text: 'System ready.', delay: 50 },
+      { text: '', delay: 20 },
     ];
 
     for (const line of this._bootLines) {
@@ -366,7 +366,7 @@ class Terminal {
         });
 
         // Small delay between sections
-        await this._delay(150);
+        await this._delay(50);
 
       } catch (error) {
         console.error(`[Terminal] Failed to render section "${plugin.constructor.id}":`, error);
@@ -440,7 +440,7 @@ class Terminal {
     
     for (const char of text) {
       element.textContent += char;
-      await this._delay(speed + Math.random() * 20);
+      await this._delay(speed + Math.random() * 5);
     }
   }
 
