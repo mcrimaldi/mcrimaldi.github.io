@@ -1,36 +1,36 @@
 {
   "info": {
-    "email": "name.surname@unina.it",
+    "email": "mariano.crimaldi@unina.it",
     "location": "Portici (NA), Italy",
     "institution": "Università degli Studi di Napoli Federico II",
     "department": "Department of Agricultural Sciences",
-    "building": "Via Università 100, 80055 Portici",
+    "building": "Piazza Carlo di Borbone 1, 80055 Portici",
     "availability": "Available for research collaborations",
     "responseTime": "Usually within 48 hours"
   },
   "social": [
     {
       "platform": "ORCID",
-      "username": "0000-0000-0000-0000",
-      "url": "https://orcid.org/",
+      "username": "0000-0002-4579-5682",
+      "url": "https://orcid.org/0000-0002-4579-5682",
       "icon": "◉"
     },
     {
       "platform": "ResearchGate",
       "username": "Profile",
-      "url": "https://www.researchgate.net/",
+      "url": "https://www.researchgate.net/profile/Mariano-Crimaldi",
       "icon": "◈"
     },
     {
       "platform": "Google Scholar",
       "username": "Citations",
-      "url": "https://scholar.google.com/",
+      "url": "https://scholar.google.com/citations?user=Ofzq0M4AAAAJ",
       "icon": "✦"
     },
     {
       "platform": "LinkedIn",
       "username": "Professional Profile",
-      "url": "https://www.linkedin.com/",
+      "url": "https://www.linkedin.com/in/mcrimaldi/",
       "icon": "⌂"
     },
     {
@@ -41,7 +41,7 @@
     }
   ],
   "form": {
-    "enabled": true,
+    "enabled": false,
     "fields": [
       {
         "name": "name",
