@@ -6,6 +6,11 @@
   <meta name="description" content="Eng. Mariano Crimaldi, Ph.D. - Scientific and Technologic Officer at University of Naples Federico II, Department of Agricultural Sciences">
   <meta name="theme-color" content="#00ff00">
   
+  <!-- Cache Control -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  
   <title>Eng. Mariano Crimaldi, Ph.D. | Scientific and Technologic Officer</title>
   
   <!-- Preconnect to font sources -->
@@ -15,11 +20,25 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/base.css">
+  <!-- Stylesheets with cache busting -->
+  <link rel="stylesheet" href="css/base.css?v=2.0">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨</text></svg>">
+  
+  <!-- Clear browser caches on load -->
+  <script>
+    (function() {
+      // Clear all caches on page load
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          names.forEach(function(name) {
+            caches.delete(name);
+          });
+        });
+      }
+    })();
+  </script>
   
   <style>
     /* Critical CSS for fast initial render */
@@ -156,7 +175,7 @@
   </noscript>
   
   <!-- Application Entry Point -->
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=2.0"></script>
   
   <!-- Menu button handlers -->
   <script>
