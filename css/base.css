@@ -273,23 +273,40 @@ pre code {
 
 .ascii-header {
   font-family: inherit;
-  font-size: 0.625rem;
+  /* Responsive font size: scales between 0.35rem and 0.7rem based on viewport */
+  font-size: clamp(0.35rem, 1.2vw, 0.7rem);
   line-height: 1.1;
   color: var(--terminal-primary);
   margin-bottom: 1.5rem;
   white-space: pre;
   text-shadow: 0 0 10px var(--terminal-glow);
   overflow-x: auto;
+  text-align: center;
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-@media (max-width: 600px) {
+.ascii-header::-webkit-scrollbar {
+  display: none;
+}
+
+/* Very small screens: even smaller font */
+@media (max-width: 480px) {
   .ascii-header {
-    font-size: 0.5rem;
+    font-size: clamp(0.25rem, 2vw, 0.4rem);
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .ascii-header {
+    font-size: 0.75rem;
   }
 }
 
 .ascii-subtitle {
-  font-size: 0.9375rem;
+  font-size: clamp(0.75rem, 2.5vw, 0.9375rem);
   color: var(--terminal-accent);
   margin-top: 0.5rem;
   text-align: center;
@@ -297,7 +314,7 @@ pre code {
 }
 
 .ascii-affiliation {
-  font-size: 0.8125rem;
+  font-size: clamp(0.65rem, 2vw, 0.8125rem);
   color: var(--terminal-text-dim);
   margin-top: 0.25rem;
   text-align: center;

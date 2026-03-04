@@ -40,10 +40,6 @@ class ContactSection extends SectionPlugin {
     const wrapper = document.createElement('div');
     wrapper.className = 'contact-content';
 
-    // ASCII mail art
-    const mailArt = this._createMailArt();
-    wrapper.appendChild(mailArt);
-
     // Contact info grid
     const infoGrid = this._createInfoGrid();
     wrapper.appendChild(infoGrid);
@@ -64,7 +60,7 @@ class ContactSection extends SectionPlugin {
     container.innerHTML = `<pre>
     ╔═══════════════════════════════════╗
     ║  ┌─────────────────────────────┐  ║
-    ║  │     📨  GET IN TOUCH  📨   │  ║
+    ║  │     📨  GET IN TOUCH  📨    │  ║
     ║  └─────────────────────────────┘  ║
     ║    Let's build something great    ║
     ╚═══════════════════════════════════╝
