@@ -77,12 +77,7 @@ class AboutSection extends SectionPlugin {
     // QUICK FACTS - Modify these values to match your profile
     // Set to empty array [] to hide this section entirely
     // ═══════════════════════════════════════════════════════════════
-    const facts = [
- /*      { label: 'Institution', value: 'Università degli Studi di Napoli Federico II', icon: '◈' },
-      { label: 'Department', value: 'Agricultural Sciences', icon: '◆' },
-      { label: 'Role', value: 'Scientific and Technologic Officer', icon: '◉' },
-      { label: 'Location', value: 'Portici (NA), Italy', icon: '◇' } */
-    ];
+    const facts = [];
     // ═══════════════════════════════════════════════════════════════
 
     // If no facts, return empty container

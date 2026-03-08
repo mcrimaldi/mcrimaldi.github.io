@@ -1,6 +1,6 @@
-# Eng. Mariano Crimaldi, Ph.D. - Personal Portfolio
+# Eng. Mariano Crimaldi, Ph.D. - Personal Landing Page
 
-A terminal-style personal portfolio website with CRT effects, live publication metrics from Scopus/OpenAlex, and responsive design.
+A terminal-style personal landing page website with CRT effects, live publication metrics from Scopus/OpenAlex, and responsive design.
 
 🌐 **Live at**: [https://mcrimaldi.github.io](https://mcrimaldi.github.io)
 
