@@ -78,10 +78,10 @@ class AboutSection extends SectionPlugin {
     // Set to empty array [] to hide this section entirely
     // ═══════════════════════════════════════════════════════════════
     const facts = [
-      { label: 'Institution', value: 'Università degli Studi di Napoli Federico II', icon: '◈' },
+ /*      { label: 'Institution', value: 'Università degli Studi di Napoli Federico II', icon: '◈' },
       { label: 'Department', value: 'Agricultural Sciences', icon: '◆' },
       { label: 'Role', value: 'Scientific and Technologic Officer', icon: '◉' },
-      { label: 'Location', value: 'Portici (NA), Italy', icon: '◇' }
+      { label: 'Location', value: 'Portici (NA), Italy', icon: '◇' } */
     ];
     // ═══════════════════════════════════════════════════════════════
 
