@@ -6,7 +6,7 @@
       "company": "Università degli Studi di Napoli Federico II",
       "department": "Department of Agricultural Sciences",
       "location": "Portici (NA), Italy",
-      "startDate": "2019-03",
+      "startDate": "2024-12",
       "endDate": null,
       "current": true,
       "description": "Providing comprehensive technical and scientific support for research activities within the Department of Agricultural Sciences, managing laboratory instrumentation, and developing data analysis solutions.",
@@ -20,13 +20,13 @@
       "technologies": ["FTIR/NIR Spectroscopy", "HPLC", "GC-MS", "R", "Python", "PostgreSQL", "IoT/LoRaWAN"]
     },
     {
-      "id": "research-fellow-unina",
-      "title": "Research Fellow",
+      "id": "postdoc-fellow-unina",
+      "title": "Post-Doc Researcher",
       "company": "Università degli Studi di Napoli Federico II",
       "department": "Department of Agricultural Sciences",
       "location": "Portici (NA), Italy",
-      "startDate": "2016-01",
-      "endDate": "2019-02",
+      "startDate": "2024-12",
+      "endDate": "2021-12",
       "current": false,
       "description": "Conducted research on soil quality assessment and sustainable agricultural practices, with a focus on developing rapid analytical methods using spectroscopic techniques.",
       "achievements": [
@@ -43,8 +43,8 @@
       "company": "Università degli Studi di Napoli Federico II",
       "department": "Department of Agricultural Sciences",
       "location": "Portici (NA), Italy",
-      "startDate": "2012-11",
-      "endDate": "2015-12",
+      "startDate": "2018-11",
+      "endDate": "2021-11",
       "current": false,
       "description": "Doctoral research focused on advanced analytical techniques for soil quality monitoring in Mediterranean agroecosystems.",
       "achievements": [
@@ -57,19 +57,18 @@
     },
     {
       "id": "msc-unina",
-      "title": "MSc in Agricultural Sciences",
+      "title": "MSc in Environmental Engineering",
       "company": "Università degli Studi di Napoli Federico II",
-      "location": "Portici (NA), Italy",
+      "location": "Naples, Italy",
       "startDate": "2010-09",
       "endDate": "2012-10",
       "current": false,
-      "description": "Master's degree programme in Agricultural Sciences and Technologies, with specialisation in soil science and environmental management.",
+      "description": "Master's degree programme in Environmental Engineering, with specialisation in wastewater treatment and environmental management.",
       "achievements": [
-        "Graduated with distinction (110/110 cum laude)",
-        "Thesis on soil erosion assessment using GIS and remote sensing",
-        "Erasmus exchange at University of Copenhagen, Department of Plant and Environmental Sciences"
+        "Thesis on Localization of Corrosion Potential and Metal Release in Galvanically Affected Zone in Drinking Water",
+        "Reasearch Intern at University of Washington, Seattle, USA Department of Environmental Engineering (6 months)"
       ],
-      "technologies": ["GIS", "Remote Sensing", "Soil Science", "Environmental Modelling"]
+      "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
     }
   ]
 }
