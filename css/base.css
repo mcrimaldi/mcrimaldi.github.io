@@ -182,7 +182,7 @@ pre code {
   border-bottom: 1px solid var(--terminal-border-dim);
 }
 
-.terminal-buttons {
+/* .terminal-buttons {
   display: flex;
   gap: 0.5rem;
 }
@@ -197,7 +197,7 @@ pre code {
 
 .terminal-button--close { background: #ff5f56; }
 .terminal-button--minimize { background: #ffbd2e; }
-.terminal-button--maximize { background: #27c93f; }
+.terminal-button--maximize { background: #27c93f; } */
 
 .terminal-title {
   font-size: 0.75rem;
