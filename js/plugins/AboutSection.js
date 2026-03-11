@@ -25,6 +25,7 @@ class AboutSection extends SectionPlugin {
     await super.init();
     // Profile image path - change this to use your own image
     this.profileImage = 'assets/profile.png';
+    this.citationImage = 'assets/dont-panic.png';
   }
 
   async renderContent(body) {
@@ -65,6 +66,19 @@ class AboutSection extends SectionPlugin {
     wrapper.appendChild(facts);
 
     body.appendChild(wrapper);
+
+    if (this.citationImage) {
+      const imageContainer = document.createElement('div');
+      imageContainer.className = 'about-profile-container';
+      imageContainer.innerHTML = `
+        <div class="citation-frame">
+          <div class="citation-image-wrapper">
+            <img src="${this.citationImage}" alt="Citation logo" class="citation-image" />
+          </div>
+        </div>
+      `;
+      wrapper.appendChild(imageContainer)
+    }
   }
 
   // Profile image is loaded in init() - set this.profileImage path there
