@@ -22,8 +22,8 @@
         "Workshop organization: planning and coordinating seminars, refresher courses, and workshops on new agricultural technologies for students, researchers, and industry professionals.",
         "Publications and communication: contributing to the drafting of scientific articles, outreach materials, and technical reports, as well as managing the department’s digital communication channels (social media, website).",
         "Event organization: promoting science outreach initiatives, such as open days, conferences, and agricultural fairs."
-      ],
-      "technologies": ["FTIR/NIR Spectroscopy", "HPLC", "GC-MS", "R", "Python", "PostgreSQL", "IoT/LoRaWAN"]
+      ]
+      
     },
     {
       "id": "postdoc-fellow-unina",
