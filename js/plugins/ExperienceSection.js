@@ -127,7 +127,7 @@ class ExperienceSection extends SectionPlugin {
     content.appendChild(header);
     content.appendChild(description);
     content.appendChild(achievements);
-    content.appendChild(techStack);
+    // content.appendChild(techStack);
 
     entry.appendChild(marker);
     entry.appendChild(content);
