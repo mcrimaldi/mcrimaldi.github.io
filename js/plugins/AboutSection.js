@@ -71,9 +71,9 @@ class AboutSection extends SectionPlugin {
       const imageContainer = document.createElement('div');
       imageContainer.className = 'about-profile-container';
       imageContainer.innerHTML = `
-        <div class="citation-frame">
+        <div class="citation-frame" style="max-width: 150px; margin: 0 auto;">
           <div class="citation-image-wrapper">
-            <img src="${this.citationImage}" alt="Citation logo" class="citation-image" />
+        <img src="${this.citationImage}" alt="Citation logo" class="citation-image" style="width: 100%; height: auto;" />
           </div>
         </div>
       `;

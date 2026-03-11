@@ -17,6 +17,3 @@ I believe that robust scientific advancement requires equally robust technical f
 ---
 
 *"Don't panic!"*
-<!-- <div style="text-align: center;">
-  <img src="./dont-panic.png" alt="Centered image" style="display: block; margin: 0 auto;">
-</div> -->
