@@ -16,4 +16,7 @@ I believe that robust scientific advancement requires equally robust technical f
 
 ---
 
-*"Technology in service of science, science in service of society."*
+*"Don't panic!"*
+<div style="text-align: center;">
+  <img src="./dont-panic.png" alt="Centered image" style="display: block; margin: 0 auto;">
+</div>
