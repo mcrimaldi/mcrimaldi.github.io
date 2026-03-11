@@ -11,11 +11,17 @@
       "current": true,
       "description": "Providing comprehensive technical and scientific support for research activities within the Department of Agricultural Sciences, managing laboratory instrumentation, and developing data analysis solutions.",
       "achievements": [
-        "Established and maintained IoT sensor networks for precision agriculture research across multiple experimental sites",
-        "Developed automated data pipelines reducing analysis time by 60% for routine soil and plant characterisation",
-        "Implemented laboratory information management system serving 4 analytical laboratories",
-        "Coordinated technical aspects of 8 funded research projects (Horizon Europe, PRIN, PSR)",
-        "Trained 25+ PhD students and researchers on analytical instrumentation and data analysis methods"
+        "Laboratory management: supervision of the operation and maintenance of scientific instruments.",
+        "Experimentation and analysis: collaboration with researchers in designing and conducting experiments, as well as performing chemical, physical, or biological analyses on agricultural samples.",
+        "Research project development: support in preparing funding proposals (national and European), and in planning and implementing research projects.",
+        "Application of advanced technologies: promotion of innovative technologies such as precision agriculture, IoT sensors, drones, robotics, and big data to enhance agricultural productivity and sustainability.",
+        "Industry collaboration: fostering dialogue between the university department and agricultural companies to facilitate the transfer of innovations from the laboratory to the field.",
+        "Prototyping and testing: development or supervision of prototypes of new agricultural technologies to ensure their effectiveness and safety.",
+        "Practical training: assisting students in laboratory and field activities, introducing them to the use of advanced instrumentation.",
+        "Preparation of educational materials: collaboration with faculty to develop manuals, technical guides, and teaching materials related to agricultural technologies.",
+        "Workshop organization: planning and coordinating seminars, refresher courses, and workshops on new agricultural technologies for students, researchers, and industry professionals.",
+        "Publications and communication: contributing to the drafting of scientific articles, outreach materials, and technical reports, as well as managing the department’s digital communication channels (social media, website).",
+        "Event organization: promoting science outreach initiatives, such as open days, conferences, and agricultural fairs."
       ],
       "technologies": ["FTIR/NIR Spectroscopy", "HPLC", "GC-MS", "R", "Python", "PostgreSQL", "IoT/LoRaWAN"]
     },
