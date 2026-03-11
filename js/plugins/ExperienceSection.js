@@ -115,14 +115,14 @@ class ExperienceSection extends SectionPlugin {
       </ul>
     `;
 
-    const techStack = document.createElement('div');
+/*     const techStack = document.createElement('div');
     techStack.className = 'entry-tech';
     techStack.innerHTML = `
       <span class="tech-label">Stack:</span>
       <div class="tech-list">
         ${position.technologies.map(t => `<span class="tech-item">${t}</span>`).join('')}
       </div>
-    `;
+    `; */
 
     content.appendChild(header);
     content.appendChild(description);
