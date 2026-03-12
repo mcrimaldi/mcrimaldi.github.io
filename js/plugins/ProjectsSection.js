@@ -12,7 +12,7 @@ class ProjectsSection extends SectionPlugin {
   static id = 'projects';
   static type = 'section';
   static command = 'ls -la ~/projects/';
-  static title = 'Projects';
+  static title = 'Scientific Collaborations and Projects';
   static contentFile = 'content/projects.json';
   static order = 3;
 

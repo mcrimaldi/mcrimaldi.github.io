@@ -19,7 +19,6 @@ class SkillsSection extends SectionPlugin {
   constructor(context) {
     super(context);
     this.skillsData = null;
-    this.animationPlayed = false;
   }
 
   async init() {
@@ -60,73 +59,22 @@ class SkillsSection extends SectionPlugin {
     header.innerHTML = `<span class="category-icon" aria-hidden="true">${category.icon || '◆'}</span>${category.name}`;
     container.appendChild(header);
 
-    const skillsGrid = document.createElement('div');
-    skillsGrid.className = 'skills-grid';
-
-    for (const skill of category.skills) {
-      const skillEl = this._createSkillBar(skill);
-      skillsGrid.appendChild(skillEl);
-    }
-
-    container.appendChild(skillsGrid);
+    const skillsText = document.createElement('p');
+    skillsText.className = 'skills-inline';
+    
+    // Create inline text with alternating colors
+    const skillsHtml = category.skills.map((skill, index) => {
+      const colorClass = index % 2 === 0 ? 'skill-even' : 'skill-odd';
+      return `<span class="${colorClass}">${skill.name}</span>`;
+    }).join('<span class="skill-separator">; </span>');
+    
+    skillsText.innerHTML = skillsHtml;
+    container.appendChild(skillsText);
+    
     return container;
-  }
-
-  _createSkillBar(skill) {
-    const container = document.createElement('div');
-    container.className = 'skill-item';
-    container.setAttribute('role', 'progressbar');
-    container.setAttribute('aria-valuenow', skill.level);
-    container.setAttribute('aria-valuemin', '0');
-    container.setAttribute('aria-valuemax', '100');
-    container.setAttribute('aria-label', `${skill.name}: ${skill.level}%`);
-
-    const labelRow = document.createElement('div');
-    labelRow.className = 'skill-label-row';
-    labelRow.innerHTML = `
-      <span class="skill-name">${skill.name}</span>
-      <span class="skill-level">${skill.level}%</span>
-    `;
-
-    const barContainer = document.createElement('div');
-    barContainer.className = 'skill-bar-container';
-
-    const bar = document.createElement('div');
-    bar.className = 'skill-bar';
-    bar.style.setProperty('--skill-level', '0%');
-    bar.dataset.level = skill.level;
-
-    // Add visual blocks for terminal aesthetic
-    const blocks = Math.floor(skill.level / 5);
-    bar.innerHTML = '█'.repeat(blocks) + '░'.repeat(20 - blocks);
-
-    barContainer.appendChild(bar);
-    container.appendChild(labelRow);
-    container.appendChild(barContainer);
-
-    return container;
-  }
-
-  _animateSkillBars() {
-    if (this.animationPlayed) return;
-
-    const bars = this.container.querySelectorAll('.skill-bar');
-    bars.forEach((bar, index) => {
-      setTimeout(() => {
-        const level = parseInt(bar.dataset.level, 10);
-        bar.style.setProperty('--skill-level', `${level}%`);
-        bar.classList.add('animated');
-      }, index * 100);
-    });
-
-    this.animationPlayed = true;
   }
 
   onExpand() {
-    // Animate skill bars when section expands
-    requestAnimationFrame(() => {
-      this._animateSkillBars();
-    });
     this.emit('section:expanded', { id: this.constructor.id });
   }
 

@@ -182,7 +182,7 @@ pre code {
   border-bottom: 1px solid var(--terminal-border-dim);
 }
 
-/* .terminal-buttons {
+.terminal-buttons {
   display: flex;
   gap: 0.5rem;
 }
@@ -197,7 +197,7 @@ pre code {
 
 .terminal-button--close { background: #ff5f56; }
 .terminal-button--minimize { background: #ffbd2e; }
-.terminal-button--maximize { background: #27c93f; } */
+.terminal-button--maximize { background: #27c93f; }
 
 .terminal-title {
   font-size: 0.75rem;
@@ -475,50 +475,44 @@ pre code {
 }
 
 /* =====================================================
-   SKILL BARS
+   SKILLS LIST
    ===================================================== */
 
 .skill-category {
   margin-bottom: 1.5rem;
 }
 
-.skill-category-title {
+.category-title {
   color: var(--terminal-accent);
-  margin-bottom: 0.75rem;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.skill-item {
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
-.skill-name {
-  min-width: 120px;
-  color: var(--terminal-text);
-  font-size: 0.875rem;
-}
-
-.skill-bar {
-  flex: 1;
-  font-family: inherit;
-  letter-spacing: -0.05em;
+.category-icon {
   color: var(--terminal-primary);
 }
 
-.skill-bar-empty {
+.skills-inline {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.skill-separator {
   color: var(--terminal-text-muted);
 }
 
-.skill-level {
-  min-width: 3rem;
-  text-align: right;
-  color: var(--terminal-text-dim);
-  font-size: 0.8125rem;
+/* Alternating colors */
+.skill-even {
+  color: var(--terminal-text);
+}
+
+.skill-odd {
+  color: var(--terminal-accent);
 }
 
 /* =====================================================
