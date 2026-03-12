@@ -12,7 +12,7 @@ class SkillsSection extends SectionPlugin {
   static id = 'skills';
   static type = 'section';
   static command = 'cat skills.json | jq';
-  static title = 'Skills & Technologies';
+  static title = 'Skills & Technologies Espertise';
   static contentFile = 'content/skills.json';
   static order = 2;
 
