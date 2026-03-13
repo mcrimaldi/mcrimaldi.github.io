@@ -26,21 +26,29 @@
       
     },
     {
+      "id": "postdoc-fellow-agritech",
+      "title": "Post-Doc Researcher",
+      "company": "AGRITECH",
+      "department": "National Research Center for Technology in Agriculture",
+      "location": "Portici (NA), Italy",
+      "startDate": "2023-03",
+      "endDate": "2024-12",
+      "current": false,
+      "description": "Development of robotic solutions for the automation of precision farming and agriculture solutions, integrated fleets of land-air autonomous systems through artificial intelligence systems, collaborative robots, and 5G networks.",
+      "achievements": [],
+      "technologies": ["Spectroscopy", "Chemometrics", "R", "Soil Analysis", "GIS"]
+    },
+        {
       "id": "postdoc-fellow-unina",
       "title": "Post-Doc Researcher",
       "company": "Università degli Studi di Napoli Federico II",
       "department": "Department of Agricultural Sciences",
       "location": "Portici (NA), Italy",
-      "startDate": "2024-12",
-      "endDate": "2021-12",
+      "startDate": "2022-02",
+      "endDate": "2023-03",
       "current": false,
-      "description": "Conducted research on soil quality assessment and sustainable agricultural practices, with a focus on developing rapid analytical methods using spectroscopic techniques.",
-      "achievements": [
-        "Led development of chemometric models for soil carbon prediction using mid-infrared spectroscopy",
-        "Co-authored 6 peer-reviewed publications in high-impact journals",
-        "Presented research at 4 international conferences including EGU and Eurosoil",
-        "Contributed to successful grant applications totalling €450,000"
-      ],
+      "description": "Earth Observation Technologies for Irrigation in Mediterranean Environments - Estimation of productivity of irrigated crops through techniques of assimilation and/or input-forcing in agro-hydrological models (e.g. AQUACROP); derivation of irrigated productivity maps in the project study areas located in Lebanon, Jordan, Spain and Italy.",
+      "achievements": [],
       "technologies": ["Spectroscopy", "Chemometrics", "R", "Soil Analysis", "GIS"]
     },
     {
@@ -50,30 +58,36 @@
       "department": "Department of Agricultural Sciences",
       "location": "Portici (NA), Italy",
       "startDate": "2018-11",
-      "endDate": "2021-11",
+      "endDate": "2022-02",
       "current": false,
-      "description": "Doctoral research focused on advanced analytical techniques for soil quality monitoring in Mediterranean agroecosystems.",
-      "achievements": [
-        "Completed PhD thesis on spectroscopic methods for soil organic matter characterisation",
-        "Developed novel sample preparation protocols adopted by the department's soil laboratory",
-        "Visiting researcher at Wageningen University (3 months) for advanced chemometrics training",
-        "Recipient of departmental award for best PhD thesis"
-      ],
+      "description": "Immersive Visualization for Smart Farming applications. Study of ”Functional-structural plant modelling” for agricultural applications.b he main goal of the study is to create a bi-directional integration between biological model and immersive technology such as virtual and augmented reality in order to have a realistic simulation of plant growth, capable to adapt to input factors such as light, presence of nutrients and water concentration. Development and research of UAVs systems for precision agriculture applications including real-time plant diseases recognition using AI, Neural Networks and Deep Learning. Development of novel spraying system for UAVs. Python image analysis applications, GIS applications of remote sensing images. UAV use for plant disease remote sensing.",
+      "achievements": [],
       "technologies": ["FTIR", "NMR Spectroscopy", "Thermal Analysis", "Multivariate Statistics"]
     },
     {
-      "id": "msc-unina",
-      "title": "MSc in Environmental Engineering",
+      "id": "research-grant-unina",
+      "title": "Research Grant",
       "company": "Università degli Studi di Napoli Federico II",
-      "location": "Naples, Italy",
-      "startDate": "2010-09",
-      "endDate": "2012-10",
+      "department": "Department of Agricultural Sciences",
+      "location": "Portici (NA), Italy",
+      "startDate": "2014-05",
+      "endDate": "2018-11",
       "current": false,
-      "description": "Master's degree programme in Environmental Engineering, with specialisation in wastewater treatment and environmental management.",
-      "achievements": [
-        "Thesis on Localization of Corrosion Potential and Metal Release in Galvanically Affected Zone in Drinking Water",
-        "Reasearch Intern at University of Washington, Seattle, USA Department of Environmental Engineering (6 months)"
-      ],
+      "description": "Study of advanced techniques for hemp (Cannabis Sativa L.) utilization in food industry. Experimental cultivation mechanical harvesting optimization. Study of biomass plantation automatic harvesting (Cannabis Sativa L., Punica Granatum L.). Mechanical hemp seed oil extraction optimization. Study to evaluate the effects of an automatic milking system (AMS) on milk yield and composition of buffalo (Mediterranean-type Bubalus bubalis) cows. Energetic optimization of one and two phases mechanical harvesting. Biomass characterization for EU project ”PON Enerbiochem”. Calorimetric studies of biomas using a Mahler’s bomb. Bio-fuel production from SRF/SRC woody biomass (Arundo Donax L., Populus Nigra L.; Populus x Euroamericana L., Fraxinus Angustifolia L., Robinia Pseudoacacia L., Eucalyptus Occidentalis L., Salix Alba L.); Mechanical tobacco seed oil extraction optimization.",
+      "achievements": [],
+      "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
+    },
+    {
+      "id": "research-intern-seattle",
+      "title": "Research intern",
+      "company": "University of Washington",
+      "department": "Department of Environmental Engineering",
+      "location": "Seattle (WA), USA",
+      "startDate": "2011-03",
+      "endDate": "2011-09",
+      "current": false,
+      "description": "Study about localization of corrosion potential and metal release in galvanically affected zone in drinking water with extensive experiments related to the elucidation of effects of galvanic coupling on the distribution of galvanic potential. Design of novel flow-through cells to monitor corrosion in drinking water based on corrosion potential changes. Extensive experiments related to the elucidation of effects of galvanic coupling on the distribution of galvanic potential. Measurements of metal release using ICP-MS.",
+      "achievements": [],
       "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
     }
   ]
