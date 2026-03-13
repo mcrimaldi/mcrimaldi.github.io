@@ -89,6 +89,42 @@
       "description": "Study about localization of corrosion potential and metal release in galvanically affected zone in drinking water with extensive experiments related to the elucidation of effects of galvanic coupling on the distribution of galvanic potential. Design of novel flow-through cells to monitor corrosion in drinking water based on corrosion potential changes. Extensive experiments related to the elucidation of effects of galvanic coupling on the distribution of galvanic potential. Measurements of metal release using ICP-MS.",
       "achievements": [],
       "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
+    },
+    {
+      "id": "hse-engineer",
+      "title": "HSE Engineer",
+      "company": "Studio Amich",
+      "location": "Naples, Italy",
+      "startDate": "2013-07",
+      "endDate": "2014-06",
+      "current": false,
+      "description": "Estimation of industrial activity risks. Assessment and drafting of the DVR (Documento Valutazione dei Rischi), management of operational safety plan. Expert advise on safety and security within a workplace. Advise, estimation and assessment of environmental, chemical and electromagnetic risk, internal and external noise, fire, vibrations, radiations. Trainer for compulsory corporate courses.",
+      "achievements": [],
+      "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
+    },
+    {
+      "id": "technical-advisorr",
+      "title": "Technical Advisor",
+      "company": "Public Prosecutors Office of Lanciano (CH)",
+      "location": "Lanciano (CH), Italy",
+      "startDate": "2013-02",
+      "endDate": "2013-07",
+      "current": false,
+      "description": "Technical study about the state of the art of wastewater treatment plants in Lanciano (CH) area. Several technical reports and on-site chemical tests has been made to spotlight plants problem and management according to Italian and European environment laws.",
+      "achievements": [],
+      "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
+    },
+    {
+      "id": "intern-passavant",
+      "title": "Intern",
+      "company": "Passavant Impianti S.P.A.",
+      "location": "Angri (SA), Italy",
+      "startDate": "2009-04",
+      "endDate": "2009-09",
+      "current": false,
+      "description": "Study of Nitrification/De-Nitrification process in waste water treatment regarding waste water treatment plant in Angri (SA), Italy. Accurately surveyed Nitrification/Denitrification process.Performed chemical tests. Updated process plans. Drew up proposals for process alternatives and troubleshot plant problems.",
+      "achievements": [],
+      "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
     }
   ]
 }
