@@ -36,7 +36,7 @@
       "current": false,
       "description": "Development of robotic solutions for the automation of precision farming and agriculture solutions, integrated fleets of land-air autonomous systems through artificial intelligence systems, collaborative robots, and 5G networks.",
       "achievements": [],
-      "technologies": ["Spectroscopy", "Chemometrics", "R", "Soil Analysis", "GIS"]
+      "technologies": []
     },
         {
       "id": "postdoc-fellow-unina",
@@ -49,7 +49,7 @@
       "current": false,
       "description": "Earth Observation Technologies for Irrigation in Mediterranean Environments - Estimation of productivity of irrigated crops through techniques of assimilation and/or input-forcing in agro-hydrological models (e.g. AQUACROP); derivation of irrigated productivity maps in the project study areas located in Lebanon, Jordan, Spain and Italy.",
       "achievements": [],
-      "technologies": ["Spectroscopy", "Chemometrics", "R", "Soil Analysis", "GIS"]
+      "technologies": []
     },
     {
       "id": "phd-unina",
@@ -62,7 +62,7 @@
       "current": false,
       "description": "Immersive Visualization for Smart Farming applications. Study of ”Functional-structural plant modelling” for agricultural applications.b he main goal of the study is to create a bi-directional integration between biological model and immersive technology such as virtual and augmented reality in order to have a realistic simulation of plant growth, capable to adapt to input factors such as light, presence of nutrients and water concentration. Development and research of UAVs systems for precision agriculture applications including real-time plant diseases recognition using AI, Neural Networks and Deep Learning. Development of novel spraying system for UAVs. Python image analysis applications, GIS applications of remote sensing images. UAV use for plant disease remote sensing.",
       "achievements": [],
-      "technologies": ["FTIR", "NMR Spectroscopy", "Thermal Analysis", "Multivariate Statistics"]
+      "technologies": []
     },
     {
       "id": "research-grant-unina",
@@ -75,7 +75,7 @@
       "current": false,
       "description": "Study of advanced techniques for hemp (Cannabis Sativa L.) utilization in food industry. Experimental cultivation mechanical harvesting optimization. Study of biomass plantation automatic harvesting (Cannabis Sativa L., Punica Granatum L.). Mechanical hemp seed oil extraction optimization. Study to evaluate the effects of an automatic milking system (AMS) on milk yield and composition of buffalo (Mediterranean-type Bubalus bubalis) cows. Energetic optimization of one and two phases mechanical harvesting. Biomass characterization for EU project ”PON Enerbiochem”. Calorimetric studies of biomas using a Mahler’s bomb. Bio-fuel production from SRF/SRC woody biomass (Arundo Donax L., Populus Nigra L.; Populus x Euroamericana L., Fraxinus Angustifolia L., Robinia Pseudoacacia L., Eucalyptus Occidentalis L., Salix Alba L.); Mechanical tobacco seed oil extraction optimization.",
       "achievements": [],
-      "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
+      "technologies": []
     },
     {
       "id": "research-intern-seattle",
@@ -88,7 +88,7 @@
       "current": false,
       "description": "Study about localization of corrosion potential and metal release in galvanically affected zone in drinking water with extensive experiments related to the elucidation of effects of galvanic coupling on the distribution of galvanic potential. Design of novel flow-through cells to monitor corrosion in drinking water based on corrosion potential changes. Extensive experiments related to the elucidation of effects of galvanic coupling on the distribution of galvanic potential. Measurements of metal release using ICP-MS.",
       "achievements": [],
-      "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
+      "technologies": []
     },
     {
       "id": "hse-engineer",
@@ -100,7 +100,7 @@
       "current": false,
       "description": "Estimation of industrial activity risks. Assessment and drafting of the DVR (Documento Valutazione dei Rischi), management of operational safety plan. Expert advise on safety and security within a workplace. Advise, estimation and assessment of environmental, chemical and electromagnetic risk, internal and external noise, fire, vibrations, radiations. Trainer for compulsory corporate courses.",
       "achievements": [],
-      "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
+      "technologies": []
     },
     {
       "id": "technical-advisorr",
@@ -112,7 +112,7 @@
       "current": false,
       "description": "Technical study about the state of the art of wastewater treatment plants in Lanciano (CH) area. Several technical reports and on-site chemical tests has been made to spotlight plants problem and management according to Italian and European environment laws.",
       "achievements": [],
-      "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
+      "technologies": []
     },
     {
       "id": "intern-passavant",
@@ -124,7 +124,7 @@
       "current": false,
       "description": "Study of Nitrification/De-Nitrification process in waste water treatment regarding waste water treatment plant in Angri (SA), Italy. Accurately surveyed Nitrification/Denitrification process.Performed chemical tests. Updated process plans. Drew up proposals for process alternatives and troubleshot plant problems.",
       "achievements": [],
-      "technologies": ["Corrosion Potential", "Voltametry", "Wastewater Treatment", "Environmental Modelling"]
+      "technologies": []
     }
   ]
 }
