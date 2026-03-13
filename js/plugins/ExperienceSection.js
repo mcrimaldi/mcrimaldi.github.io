@@ -94,7 +94,6 @@ class ExperienceSection extends SectionPlugin {
         <time>${position.startDate}</time>
         <span class="date-separator">→</span>
         <time>${position.endDate || 'Present'}</time>
-        <span class="duration">(${this._calculateDuration(position.startDate, position.endDate)})</span>
       </div>
     `;
 
