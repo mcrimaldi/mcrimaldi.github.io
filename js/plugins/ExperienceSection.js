@@ -94,6 +94,7 @@ class ExperienceSection extends SectionPlugin {
         <time>${position.startDate}</time>
         <span class="date-separator">→</span>
         <time>${position.endDate || 'Present'}</time>
+        <span class="duration">(${this._calculateDuration(position.startDate, position.endDate)})</span>
       </div>
     `;
 
@@ -101,33 +102,39 @@ class ExperienceSection extends SectionPlugin {
     description.className = 'entry-description';
     description.innerHTML = `<p>${position.description}</p>`;
 
-    const achievements = document.createElement('div');
-    achievements.className = 'entry-achievements';
-    achievements.innerHTML = `
-      <span class="achievements-label">Key Achievements:</span>
-      <ul class="achievements-list">
-        ${position.achievements.map(a => `
-          <li>
-            <span class="bullet" aria-hidden="true">▸</span>
-            <span class="achievement-text">${a}</span>
-          </li>
-        `).join('')}
-      </ul>
-    `;
-
-/*     const techStack = document.createElement('div');
-    techStack.className = 'entry-tech';
-    techStack.innerHTML = `
-      <span class="tech-label">Stack:</span>
-      <div class="tech-list">
-        ${position.technologies.map(t => `<span class="tech-item">${t}</span>`).join('')}
-      </div>
-    `; */
-
     content.appendChild(header);
     content.appendChild(description);
-    content.appendChild(achievements);
-    // content.appendChild(techStack);
+
+    // Only show achievements if array exists and is not empty
+    if (position.achievements && position.achievements.length > 0) {
+      const achievements = document.createElement('div');
+      achievements.className = 'entry-achievements';
+      achievements.innerHTML = `
+        <span class="achievements-label">Key Achievements:</span>
+        <ul class="achievements-list">
+          ${position.achievements.map(a => `
+            <li>
+              <span class="bullet" aria-hidden="true">▸</span>
+              <span class="achievement-text">${a}</span>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+      content.appendChild(achievements);
+    }
+
+    // Only show tech stack if array exists and is not empty
+    if (position.technologies && position.technologies.length > 0) {
+      const techStack = document.createElement('div');
+      techStack.className = 'entry-tech';
+      techStack.innerHTML = `
+        <span class="tech-label">Stack:</span>
+        <div class="tech-list">
+          ${position.technologies.map(t => `<span class="tech-item">${t}</span>`).join('')}
+        </div>
+      `;
+      content.appendChild(techStack);
+    }
 
     entry.appendChild(marker);
     entry.appendChild(content);
