@@ -453,7 +453,7 @@ pre code {
 }
 
 .terminal-section.expanded .section-body {
-  max-height: 3000px;
+  max-height: 50000px;
   padding: 1rem;
   border-top: 1px solid var(--terminal-border-dim);
 }
@@ -466,7 +466,7 @@ pre code {
 }
 
 .terminal-section.expanded .section-content {
-  max-height: 2000px;
+  max-height: 50000px;
 }
 
 .section-inner {
