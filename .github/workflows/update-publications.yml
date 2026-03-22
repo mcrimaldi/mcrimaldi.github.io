@@ -7,10 +7,10 @@ on:
   # Run automatically every Sunday at 2:00 AM UTC
   schedule:
     - cron: '0 2 * * 0'
-  
-  # Run on push to main (optional, remove if not needed)
-  # push:
-  #   branches: [main]
+
+# IMPORTANT: This permission is required to push changes
+permissions:
+  contents: write
 
 jobs:
   update-publications:
@@ -30,24 +30,44 @@ jobs:
           SCOPUS_API_KEY: ${{ secrets.SCOPUS_API_KEY }}
           SCOPUS_AUTHOR_ID: ${{ secrets.SCOPUS_AUTHOR_ID }}
         run: |
-          # Fetch author metrics
+          # Fetch author metrics and save to file
           echo "Fetching author metrics..."
-          AUTHOR_DATA=$(curl -s -H "Accept: application/json" \
+          curl -s -H "Accept: application/json" \
             -H "X-ELS-APIKey: ${SCOPUS_API_KEY}" \
-            "https://api.elsevier.com/content/author/author_id/${SCOPUS_AUTHOR_ID}?view=METRICS")
+            "https://api.elsevier.com/content/author/author_id/${SCOPUS_AUTHOR_ID}?view=METRICS" \
+            -o author_data.json
           
-          # Fetch publications
+          # Check if author data was fetched successfully
+          if [ ! -s author_data.json ]; then
+            echo "Error: Failed to fetch author data"
+            exit 1
+          fi
+          
+          # Fetch publications and save to file
           echo "Fetching publications..."
-          PUBS_DATA=$(curl -s -H "Accept: application/json" \
+          curl -s -H "Accept: application/json" \
             -H "X-ELS-APIKey: ${SCOPUS_API_KEY}" \
-            "https://api.elsevier.com/content/search/scopus?query=AU-ID(${SCOPUS_AUTHOR_ID})&sort=-citedby-count&count=50")
+            "https://api.elsevier.com/content/search/scopus?query=AU-ID(${SCOPUS_AUTHOR_ID})&sort=-citedby-count&count=100" \
+            -o pubs_data.json
+          
+          # Check if publications data was fetched successfully
+          if [ ! -s pubs_data.json ]; then
+            echo "Error: Failed to fetch publications data"
+            exit 1
+          fi
+          
+          # Debug: show first part of response to verify data
+          echo "Author data preview:"
+          head -c 500 author_data.json
+          echo ""
           
           # Create Node.js script to process data
           cat > process_scopus.js << 'SCRIPT'
           const fs = require('fs');
           
-          const authorData = JSON.parse(process.env.AUTHOR_DATA || '{}');
-          const pubsData = JSON.parse(process.env.PUBS_DATA || '{}');
+          // Read data from files
+          const authorData = JSON.parse(fs.readFileSync('author_data.json', 'utf8'));
+          const pubsData = JSON.parse(fs.readFileSync('pubs_data.json', 'utf8'));
           
           // Extract author info
           const authorProfile = authorData['author-retrieval-response']?.[0] || {};
@@ -59,6 +79,17 @@ jobs:
             hIndex = parseInt(authorProfile['h-index']) || 0;
           } else if (coredata?.['h-index']) {
             hIndex = parseInt(coredata['h-index']) || 0;
+          } else if (authorProfile?.['author-profile']?.['h-index']) {
+            hIndex = parseInt(authorProfile['author-profile']['h-index']) || 0;
+          }
+          
+          // Debug: log structure if h-index is 0
+          if (hIndex === 0) {
+            console.log('Debug - Author profile keys:', Object.keys(authorProfile));
+            console.log('Debug - Coredata keys:', Object.keys(coredata));
+            if (authorProfile?.['author-profile']) {
+              console.log('Debug - author-profile keys:', Object.keys(authorProfile['author-profile']));
+            }
           }
           
           // Get preferred name
@@ -73,6 +104,12 @@ jobs:
           
           // Process publications
           const entries = pubsData['search-results']?.entry || [];
+          
+          // Check for error in search results
+          if (pubsData['search-results']?.['opensearch:totalResults'] === '0') {
+            console.log('Warning: No publications found in search results');
+          }
+          
           const publications = entries.map(entry => ({
             title: entry['dc:title'] || 'Untitled',
             authors: entry['dc:creator'] || '',
@@ -90,6 +127,13 @@ jobs:
           // Calculate i10-index
           const i10Index = publications.filter(p => p.citations >= 10).length;
           
+          // Get total citations from coredata
+          const totalCitations = parseInt(coredata['citation-count']) || 
+                                 publications.reduce((sum, p) => sum + p.citations, 0);
+          
+          // Get document count
+          const worksCount = parseInt(coredata['document-count']) || publications.length;
+          
           // Create final JSON
           const result = {
             _generatedAt: new Date().toISOString(),
@@ -102,8 +146,8 @@ jobs:
             metrics: {
               hIndex: hIndex,
               i10Index: i10Index,
-              totalCitations: parseInt(coredata['citation-count']) || 0,
-              worksCount: parseInt(coredata['document-count']) || publications.length,
+              totalCitations: totalCitations,
+              worksCount: worksCount,
               lastUpdated: new Date().toISOString().split('T')[0],
               source: 'Scopus'
             },
@@ -113,19 +157,25 @@ jobs:
           
           fs.writeFileSync('content/publications.json', JSON.stringify(result, null, 2));
           console.log(`✓ Saved ${publications.length} publications`);
-          console.log(`✓ h-index: ${hIndex}, citations: ${result.metrics.totalCitations}`);
+          console.log(`✓ h-index: ${hIndex}, citations: ${totalCitations}`);
           SCRIPT
           
           # Run the processing script
-          AUTHOR_DATA="$AUTHOR_DATA" PUBS_DATA="$PUBS_DATA" SCOPUS_AUTHOR_ID="$SCOPUS_AUTHOR_ID" node process_scopus.js
+          node process_scopus.js
           
-          # Cleanup
-          rm process_scopus.js
+          # Cleanup temp files
+          rm -f author_data.json pubs_data.json process_scopus.js
       
       - name: Commit and Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add content/publications.json
-          git diff --staged --quiet || git commit -m "📚 Update publications from Scopus [$(date +'%Y-%m-%d')]"
-          git push
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "📚 Update publications from Scopus [$(date +'%Y-%m-%d')]"
+            git push
+          fi
