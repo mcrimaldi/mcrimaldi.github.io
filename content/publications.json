@@ -7,9 +7,9 @@
   "metrics": {
     "hIndex": 13,
     "i10Index": 15,
-    "totalCitations": 600,
+    "totalCitations": 604,
     "worksCount": 32,
-    "lastUpdated": "2026-03-02",
+    "lastUpdated": "2026-03-24",
     "source": "Scopus"
   },
   "publications": [
@@ -21,7 +21,7 @@
       "volume": "8",
       "issue": "1",
       "pages": "",
-      "citations": 213,
+      "citations": 215,
       "url": "https://doi.org/10.1186/s40538-021-00217-8",
       "openAccess": true,
       "type": "Review"
@@ -222,6 +222,19 @@
       "type": "Article"
     },
     {
+      "title": "Mapping Soil Organic Carbon Stock Using Hyperspectral Remote Sensing: A Case Study in the Sele River Plain in Southern Italy",
+      "authors": "Francos N.",
+      "journal": "Remote Sensing",
+      "year": "2024",
+      "volume": "16",
+      "issue": "5",
+      "pages": "",
+      "citations": 8,
+      "url": "https://doi.org/10.3390/rs16050897",
+      "openAccess": true,
+      "type": "Article"
+    },
+    {
       "title": "Neural Network Algorithms for Real Time Plant Diseases Detection Using UAVs",
       "authors": "Crimaldi M.",
       "journal": "Lecture Notes in Civil Engineering",
@@ -233,19 +246,6 @@
       "url": "https://doi.org/10.1007/978-3-030-39299-4_89",
       "openAccess": false,
       "type": "Book Chapter"
-    },
-    {
-      "title": "Mapping Soil Organic Carbon Stock Using Hyperspectral Remote Sensing: A Case Study in the Sele River Plain in Southern Italy",
-      "authors": "Francos N.",
-      "journal": "Remote Sensing",
-      "year": "2024",
-      "volume": "16",
-      "issue": "5",
-      "pages": "",
-      "citations": 7,
-      "url": "https://doi.org/10.3390/rs16050897",
-      "openAccess": true,
-      "type": "Article"
     },
     {
       "title": "GobhiSet: Dataset of raw, manually, and automatically annotated RGB images across phenology of Brassica oleracea var. Botrytis",
@@ -261,6 +261,19 @@
       "type": "Data Paper"
     },
     {
+      "title": "Integration of a System Dynamics Model and 3D Tree Rendering—VISmaF Part II: Model Development, Results and Potential Agronomic Applications",
+      "authors": "Crimaldi M.",
+      "journal": "Agronomy",
+      "year": "2023",
+      "volume": "13",
+      "issue": "1",
+      "pages": "",
+      "citations": 6,
+      "url": "https://doi.org/10.3390/agronomy13010218",
+      "openAccess": true,
+      "type": "Article"
+    },
+    {
       "title": "RafanoSet: Dataset of raw, manually, and automatically annotated Raphanus Raphanistrum weed images for object detection and segmentation.",
       "authors": "Rana S.",
       "journal": "Data in Brief",
@@ -272,19 +285,6 @@
       "url": "https://doi.org/10.1016/j.dib.2024.110430",
       "openAccess": true,
       "type": "Data Paper"
-    },
-    {
-      "title": "Integration of a System Dynamics Model and 3D Tree Rendering—VISmaF Part II: Model Development, Results and Potential Agronomic Applications",
-      "authors": "Crimaldi M.",
-      "journal": "Agronomy",
-      "year": "2023",
-      "volume": "13",
-      "issue": "1",
-      "pages": "",
-      "citations": 5,
-      "url": "https://doi.org/10.3390/agronomy13010218",
-      "openAccess": true,
-      "type": "Article"
     },
     {
       "title": "Biomass quality of different species after storage",
