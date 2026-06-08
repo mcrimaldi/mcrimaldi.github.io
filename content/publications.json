@@ -5,7 +5,7 @@
   "authorName": "",
   "affiliation": "",
   "metrics": {
-    "hIndex": 13,
+    "hIndex": 12,
     "i10Index": 16,
     "totalCitations": 623,
     "worksCount": 32,
@@ -15,7 +15,7 @@
   "publications": [
     {
       "title": "Drone and sensor technology for sustainable weed management: a review",
-      "authors": "Esposito M.",
+      "authors": "Esposito M., Crimaldi M., Cirillo V., Sarghini F., Maggio A.",
       "journal": "Chemical and Biological Technologies in Agriculture",
       "year": "2021",
       "volume": "8",
@@ -28,7 +28,7 @@
     },
     {
       "title": "Bulk drag predictions of riparian arundo donax stands through UAV-acquired multispectral images",
-      "authors": "Lama G.F.C.",
+      "authors": "Lama G.F.C., Crimaldi M., Pasquino V., Padulano R., Chirico G.B.",
       "journal": "Water Switzerland",
       "year": "2021",
       "volume": "13",
@@ -41,7 +41,7 @@
     },
     {
       "title": "Optimization of hemp seeds (Canapa Sativa L.) oil mechanical extraction",
-      "authors": "Crimaldi M.",
+      "authors": "Crimaldi M., Faugno S., Sannino M., Ardito L.",
       "journal": "Chemical Engineering Transactions",
       "year": "2017",
       "volume": "58",
@@ -54,7 +54,7 @@
     },
     {
       "title": "Eco-hydrodynamic characterization of vegetated flows derived by UAV-based imagery",
-      "authors": "Cesare Lama G.F.",
+      "authors": "Cesare Lama G.F., Crimaldi M., Vivo A.D., Battista Chirico G., Sarghini F.",
       "journal": "2021 IEEE International Workshop on Metrology for Agriculture and Forestry Metroagrifor 2021 Proceedings",
       "year": "2021",
       "volume": "",
@@ -67,7 +67,7 @@
     },
     {
       "title": "Production of selected short-rotation wood crop species and quality of obtained biomass",
-      "authors": "Civitarese V.",
+      "authors": "Civitarese V., Faugno S., Picchio R., Assirelli A., Sperandio G., Saulino L., Crimaldi M., Sannino M.",
       "journal": "European Journal of Forest Research",
       "year": "2018",
       "volume": "137",
@@ -80,33 +80,33 @@
     },
     {
       "title": "Impact of riparian plants biomass assessed by UAV-acquired multispectral images on the hydrodynamics of vegetated streams",
-      "authors": "Crimaldi M.",
+      "authors": "Crimaldi M., Lama G.F.C.",
       "journal": "European Biomass Conference and Exhibition Proceedings",
       "year": "2021",
       "volume": "",
       "issue": "",
       "pages": "1157-1161",
       "citations": 26,
-      "url": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85111850992&origin=inward",
+      "url": "#",
       "openAccess": false,
       "type": "Conference Paper"
     },
     {
       "title": "Assessing the role of gap fraction on the leaf area index (LAI) estimations of riparian vegetation based on fisheye lenses",
-      "authors": "Lama G.F.C.",
+      "authors": "Lama G.F.C., Crimaldi M.",
       "journal": "European Biomass Conference and Exhibition Proceedings",
       "year": "2021",
       "volume": "",
       "issue": "",
       "pages": "1172-1176",
       "citations": 26,
-      "url": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85111828961&origin=inward",
+      "url": "#",
       "openAccess": false,
       "type": "Conference Paper"
     },
     {
       "title": "First measurements of spray deposition obtained from UAV spray application technique",
-      "authors": "Sarghini F.",
+      "authors": "Sarghini F., Visacki V., Sedlar A., Crimaldi M., Cristiano V., Vivo A.D.",
       "journal": "2019 IEEE International Workshop on Metrology for Agriculture and Forestry Metroagrifor 2019 Proceedings",
       "year": "2019",
       "volume": "",
@@ -119,20 +119,20 @@
     },
     {
       "title": "Hemp seed mechanical harvesting efficiency analysis",
-      "authors": "Faugno S.",
+      "authors": "Faugno S., Sannino M., Crimaldi M., Caracciolo G., Assirelli A.",
       "journal": "European Biomass Conference and Exhibition Proceedings",
       "year": "2018",
       "volume": "2018",
       "issue": "26thEUBCE",
       "pages": "374-377",
       "citations": 21,
-      "url": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85051018657&origin=inward",
+      "url": "#",
       "openAccess": false,
       "type": "Conference Paper"
     },
     {
       "title": "Effects of an automatic milking system on milk yield and quality of Mediterranean buffaloes",
-      "authors": "Sannino M.",
+      "authors": "Sannino M., Faugno S., Crimaldi M., Di Francia A., Ardito L., Serrapica F., Masucci F.",
       "journal": "Journal of Dairy Science",
       "year": "2018",
       "volume": "101",
@@ -145,7 +145,7 @@
     },
     {
       "title": "Mechanical oil extraction of Nicotiana tabacum L. Seeds: Analysis of main extraction parameters on oil yield",
-      "authors": "Faugno S.",
+      "authors": "Faugno S., del Piano L., Crimaldi M., Ricciardiello G., Sannino M.",
       "journal": "Journal of Agricultural Engineering",
       "year": "2016",
       "volume": "47",
@@ -158,7 +158,7 @@
     },
     {
       "title": "Effect of mechanical extraction parameters on the yield and quality of tobacco (Nicotiana tabacum L.) seed oil",
-      "authors": "Sannino M.",
+      "authors": "Sannino M., del Piano L., Abet M., Baiano S., Crimaldi M., Modestia F., Raimo F., Ricciardiello G., Faugno S.",
       "journal": "Journal of Food Science and Technology",
       "year": "2017",
       "volume": "54",
@@ -171,7 +171,7 @@
     },
     {
       "title": "VISmaF: Synthetic tree for immersive virtual visualization in smart farming. part I: Scientific background review and model proposal",
-      "authors": "Crimaldi M.",
+      "authors": "Crimaldi M., Cartenì F., Giannino F.",
       "journal": "Agronomy",
       "year": "2021",
       "volume": "11",
@@ -184,7 +184,7 @@
     },
     {
       "title": "Mapping Soil Organic Carbon Stock Using Hyperspectral Remote Sensing: A Case Study in the Sele River Plain in Southern Italy",
-      "authors": "Francos N.",
+      "authors": "Francos N., Nasta P., Allocca C., Sica B., Mazzitelli C., Lazzaro U., D’Urso G., Belfiore O.R., Crimaldi M., Sarghini F., Ben-Dor E., Romano N.",
       "journal": "Remote Sensing",
       "year": "2024",
       "volume": "16",
@@ -197,7 +197,7 @@
     },
     {
       "title": "Comprehensive Evaluation of Multispectral Image Registration Strategies in Heterogenous Agriculture Environment",
-      "authors": "Rana S.",
+      "authors": "Rana S., Gerbino S., Crimaldi M., Cirillo V., Carillo P., Sarghini F., Maggio A.",
       "journal": "Journal of Imaging",
       "year": "2024",
       "volume": "10",
@@ -210,7 +210,7 @@
     },
     {
       "title": "Two steps arundo donax L. harvesting in south Italy",
-      "authors": "Faugno S.",
+      "authors": "Faugno S., Quacquarelli I., Civitarese V., Crimaldi M., Sannino M., Ricciardiello G., Caracciolo G., Assirelli A.",
       "journal": "Chemical Engineering Transactions",
       "year": "2017",
       "volume": "58",
@@ -223,7 +223,7 @@
     },
     {
       "title": "Chip quality as a function of harvesting methodology",
-      "authors": "Faugno S.",
+      "authors": "Faugno S., Civitarese V., Assirelli A., Sperandio G., Saulino L., Crimaldi M., Sannino M.",
       "journal": "Chemical Engineering Transactions",
       "year": "2017",
       "volume": "58",
@@ -236,7 +236,7 @@
     },
     {
       "title": "Neural Network Algorithms for Real Time Plant Diseases Detection Using UAVs",
-      "authors": "Crimaldi M.",
+      "authors": "Crimaldi M., Cristiano V., De Vivo A., Isernia M., Ivanov P., Sarghini F.",
       "journal": "Lecture Notes in Civil Engineering",
       "year": "2020",
       "volume": "67",
@@ -249,7 +249,7 @@
     },
     {
       "title": "GobhiSet: Dataset of raw, manually, and automatically annotated RGB images across phenology of Brassica oleracea var. Botrytis",
-      "authors": "Rana S.",
+      "authors": "Rana S., Crimaldi M., Barretta D., Carillo P., Cirillo V., Maggio A., Sarghini F., Gerbino S.",
       "journal": "Data in Brief",
       "year": "2024",
       "volume": "54",
@@ -262,7 +262,7 @@
     },
     {
       "title": "Integration of a System Dynamics Model and 3D Tree Rendering—VISmaF Part II: Model Development, Results and Potential Agronomic Applications",
-      "authors": "Crimaldi M.",
+      "authors": "Crimaldi M., Cartenì F., Bonanomi G., Giannino F.",
       "journal": "Agronomy",
       "year": "2023",
       "volume": "13",
@@ -275,7 +275,7 @@
     },
     {
       "title": "RafanoSet: Dataset of raw, manually, and automatically annotated Raphanus Raphanistrum weed images for object detection and segmentation.",
-      "authors": "Rana S.",
+      "authors": "Rana S., Gerbino S., Barretta D., Carillo P., Crimaldi M., Cirillo V., Maggio A., Sarghini F.",
       "journal": "Data in Brief",
       "year": "2024",
       "volume": "54",
@@ -288,20 +288,20 @@
     },
     {
       "title": "Biomass quality of different species after storage",
-      "authors": "Civitarese V.",
+      "authors": "Civitarese V., Assirelli A., Sperandio G., Caracciolo G., Faugno S., Sannino M., Crimaldi M.",
       "journal": "European Biomass Conference and Exhibition Proceedings",
       "year": "2018",
       "volume": "2018",
       "issue": "26thEUBCE",
       "pages": "342-345",
       "citations": 3,
-      "url": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85051052812&origin=inward",
+      "url": "#",
       "openAccess": false,
       "type": "Conference Paper"
     },
     {
       "title": "A low-cost mo vable station for fast and effective agroclimatic monitoring",
-      "authors": "Martino R.",
+      "authors": "Martino R., Nicolazzo M., Crimaldi M., Langella G.",
       "journal": "2019 IEEE International Workshop on Metrology for Agriculture and Forestry Metroagrifor 2019 Proceedings",
       "year": "2019",
       "volume": "",
@@ -314,7 +314,7 @@
     },
     {
       "title": "Comparative Analysis of Feature and Intensity Based Image Registration Algorithms in Variable Agricultural Scenarios",
-      "authors": "Rana S.",
+      "authors": "Rana S., Gerbino S., Mehrishi P., Crimaldi M.",
       "journal": "Lecture Notes in Networks and Systems",
       "year": "2022",
       "volume": "514 LNNS",
@@ -327,20 +327,20 @@
     },
     {
       "title": "Double-pass harvesting system on giant reed in south Italy",
-      "authors": "Assirelli A.",
+      "authors": "Assirelli A., Civitarese V., Caracciolo G., Sannino M., Crimaldi M., Faugno S.",
       "journal": "European Biomass Conference and Exhibition Proceedings",
       "year": "2018",
       "volume": "2018",
       "issue": "26thEUBCE",
       "pages": "305-308",
       "citations": 2,
-      "url": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85051003502&origin=inward",
+      "url": "#",
       "openAccess": false,
       "type": "Conference Paper"
     },
     {
       "title": "On The Estimation of Real-Scale Hydrodynamic Features of Vegetated Channels through UAV-based Thermography",
-      "authors": "Cesarelama G.F.",
+      "authors": "Cesarelama G.F., Crimaldi M.",
       "journal": "Proceedings of the IAHR World Congress",
       "year": "2022",
       "volume": "",
@@ -353,7 +353,7 @@
     },
     {
       "title": "Use of artificial intelligence on UAVs for real time plant diseases detection",
-      "authors": "Ivanov P.",
+      "authors": "Ivanov P., Crimaldi M., Cristiano V., Isernia M., Sarghini F.",
       "journal": "Acta Horticulturae",
       "year": "2021",
       "volume": "1311",
@@ -366,7 +366,7 @@
     },
     {
       "title": "Automatic milking system occupation rate analysis and optimization applied to mediterranean buffaloes",
-      "authors": "Sannino M.",
+      "authors": "Sannino M., Faugno S., Crimaldi M., Ardito L., Di Francia A., Masucci F.",
       "journal": "Chemical Engineering Transactions",
       "year": "2017",
       "volume": "58",
@@ -379,20 +379,20 @@
     },
     {
       "title": "SIMULATION-BASED SYNTHETIC TRAINING ENVIRONMENTS FOR AIDRIVEN AGRICULTURAL ROBOTS",
-      "authors": "Crimaldi M.",
+      "authors": "Crimaldi M., De Vivo A., Sarghini F.",
       "journal": "13th International Conference on Simulation and Modelling in the Food and Bio Industry Foodsim 2024",
       "year": "2024",
       "volume": "",
       "issue": "",
       "pages": "161-165",
       "citations": 0,
-      "url": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85201315668&origin=inward",
+      "url": "#",
       "openAccess": false,
       "type": "Conference Paper"
     },
     {
       "title": "Virtual Orchards for Real Robots: Developing Synthetic Fruit Tree Datasets for AI-Driven Agricultural Robotics",
-      "authors": "Crimaldi M.",
+      "authors": "Crimaldi M., De Vivo A., Sarghini F.",
       "journal": "Lecture Notes in Civil Engineering",
       "year": "2025",
       "volume": "586 LNCE",
@@ -405,20 +405,20 @@
     },
     {
       "title": "MECHANICAL PRESSING EXTRACTION TEMPERATURE AND PRESSURE INFLUENCE ON THC CONTENT IN HEMP SEED OIL",
-      "authors": "Faugno S.",
+      "authors": "Faugno S., Sannino M., Piscopo R., Assirelli A., Crimaldi M., Esposito F.",
       "journal": "European Biomass Conference and Exhibition Proceedings",
       "year": "2022",
       "volume": "",
       "issue": "",
       "pages": "273-278",
       "citations": 0,
-      "url": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85142469544&origin=inward",
+      "url": "#",
       "openAccess": false,
       "type": "Conference Paper"
     },
     {
       "title": "Analysis of Instantaneous IMU Acquisition for Safety Index Identification in Tractor Driving",
-      "authors": "Cristiano V.",
+      "authors": "Cristiano V., Crimaldi M., Sarghini F.",
       "journal": "2019 IEEE International Workshop on Metrology for Agriculture and Forestry Metroagrifor 2019 Proceedings",
       "year": "2019",
       "volume": "",

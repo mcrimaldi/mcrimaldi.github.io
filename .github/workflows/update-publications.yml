@@ -40,7 +40,7 @@ jobs:
           echo "Fetching publications..."
           PUBS_DATA=$(curl -s -H "Accept: application/json" \
             -H "X-ELS-APIKey: ${SCOPUS_API_KEY}" \
-            "https://api.elsevier.com/content/search/scopus?query=AU-ID(${SCOPUS_AUTHOR_ID})&sort=-citedby-count&count=50")
+            "https://api.elsevier.com/content/search/scopus?query=AU-ID(${SCOPUS_AUTHOR_ID})&sort=-citedby-count&count=100&field=dc:title,dc:creator,author,prism:publicationName,prism:coverDate,prism:volume,prism:issueIdentifier,prism:pageRange,citedby-count,prism:doi,openaccess,subtypeDescription")
           
           # Create Node.js script to process data
           cat > process_scopus.js << 'SCRIPT'

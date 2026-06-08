@@ -85,7 +85,7 @@ async function fetchScopusData() {
 
     // Fetch publications
     console.log('📚 Fetching publications...');
-    const searchUrl = `https://api.elsevier.com/content/search/scopus?query=AU-ID(${CONFIG.authorId})&sort=-citedby-count&count=100`;
+    const searchUrl = `https://api.elsevier.com/content/search/scopus?query=AU-ID(${CONFIG.authorId})&sort=-citedby-count&count=100&field=dc:title,dc:creator,author,prism:publicationName,prism:coverDate,prism:volume,prism:issueIdentifier,prism:pageRange,citedby-count,prism:doi,openaccess,subtypeDescription`;
     
     const searchResponse = await fetch(searchUrl, {
       headers: {
@@ -152,6 +152,13 @@ function transformScopusData(authorData, searchData) {
   
   // Process publications
   const entries = searchData['search-results']?.entry || [];
+  
+  // Debug: show author data from first entry
+  if (entries.length > 0) {
+    const firstEntry = entries[0];
+    console.log('   Debug - First entry author field:', JSON.stringify(firstEntry['author']?.slice(0, 3), null, 2));
+    console.log('   Debug - First entry dc:creator:', firstEntry['dc:creator']);
+  }
   
   const publications = entries.map(entry => ({
     title: entry['dc:title'] || 'Untitled',
