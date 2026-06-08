@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog - Eng. Mariano Crimaldi, Ph.D.">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Blog | Eng. Mariano Crimaldi, Ph.D.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css?v=2.0">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>">
+  <style>
+    body { background: var(--terminal-background, #0a0a0a); color: var(--terminal-text, #00ff00); font-family: 'IBM Plex Mono', monospace; margin: 0; padding: 0; }
+    .page-container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .page-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .page-nav a { color: var(--terminal-accent, #88ff88); text-decoration: none; font-size: 0.875rem; }
+    .page-nav a:hover { color: var(--terminal-primary, #00ff00); text-decoration: underline; }
+    .page-header { border-bottom: 1px solid var(--terminal-border, #333); padding-bottom: 1rem; margin-bottom: 2rem; }
+    .page-title { color: var(--terminal-primary, #00ff00); font-size: 1.5rem; margin: 0; text-shadow: 0 0 10px var(--terminal-glow, #00ff00); }
+
+    /* Blog List View */
+    .blog-list { list-style: none; padding: 0; margin: 0; }
+    .blog-entry { padding: 1.25rem 0; border-bottom: 1px dashed var(--terminal-border-dim, #222); cursor: pointer; transition: background 0.2s; }
+    .blog-entry:hover { background: rgba(255,255,255,0.02); padding-left: 0.5rem; }
+    .blog-entry:last-child { border-bottom: none; }
+    .blog-date { font-size: 0.75rem; color: var(--terminal-text-muted, #666); }
+    .blog-title { font-size: 1.1rem; color: var(--terminal-primary, #00ff00); margin: 0.35rem 0; font-weight: 500; }
+    .blog-summary { font-size: 0.85rem; color: var(--terminal-text-dim, #888); line-height: 1.5; }
+    .blog-tags { margin-top: 0.5rem; }
+    .blog-tag { font-size: 0.7rem; color: var(--terminal-accent, #88ff88); border: 1px solid var(--terminal-border, #333); padding: 0.1rem 0.5rem; border-radius: 3px; margin-right: 0.4rem; }
+
+    /* Blog Post View */
+    .blog-post { display: none; }
+    .blog-post.active { display: block; }
+    .blog-back { color: var(--terminal-accent, #88ff88); text-decoration: none; font-size: 0.875rem; cursor: pointer; display: inline-block; margin-bottom: 1.5rem; }
+    .blog-back:hover { color: var(--terminal-primary, #00ff00); text-decoration: underline; }
+    .blog-post-header { border-bottom: 1px solid var(--terminal-border, #333); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+    .blog-post-title { color: var(--terminal-primary, #00ff00); font-size: 1.3rem; margin: 0 0 0.5rem; }
+    .blog-post-date { font-size: 0.8rem; color: var(--terminal-text-muted, #666); }
+    .blog-post-body { line-height: 1.8; color: var(--terminal-text, #00ff00); }
+    .blog-post-body h1, .blog-post-body h2, .blog-post-body h3 { color: var(--terminal-accent, #88ff88); }
+    .blog-post-body a { color: var(--terminal-accent, #88ff88); }
+    .blog-post-body code { background: rgba(255,255,255,0.05); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+    .blog-post-body pre { background: rgba(255,255,255,0.03); padding: 1rem; border: 1px solid var(--terminal-border, #333); overflow-x: auto; }
+    .blog-post-body blockquote { border-left: 3px solid var(--terminal-primary, #00ff00); margin-left: 0; padding-left: 1rem; color: var(--terminal-text-dim, #888); }
+    .blog-post-body hr { border: none; border-top: 1px dashed var(--terminal-border, #333); margin: 2rem 0; }
+    .blog-post-body em { color: var(--terminal-text-dim, #888); }
+
+    .loading { color: var(--terminal-text-dim, #555); text-align: center; padding: 3rem 0; }
+    .empty-blog { color: var(--terminal-text-dim, #555); text-align: center; padding: 3rem 0; }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <nav class="page-nav">
+      <a href="../">← Back to Home</a>
+      <span style="color: var(--terminal-text-muted, #666); font-size: 0.8125rem;">mcrimaldi.github.io/blog</span>
+    </nav>
+    
+    <header class="page-header">
+      <h1 class="page-title">✏️ Blog</h1>
+    </header>
+
+    <!-- Blog List -->
+    <div id="blog-list">
+      <div class="loading">Loading posts...</div>
+    </div>
+
+    <!-- Blog Post (single view) -->
+    <div id="blog-post" class="blog-post"></div>
+  </div>
+
+  <script>
+    (async function() {
+      const blogList = document.getElementById('blog-list');
+      const blogPost = document.getElementById('blog-post');
+      let posts = [];
+
+      // Simple Markdown to HTML converter
+      function md2html(md) {
+        return md
+          .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+          .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+          .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+          .replace(/^---$/gm, '<hr>')
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+          .replace(/`(.*?)`/g, '<code>$1</code>')
+          .replace(/^\> (.*$)/gm, '<blockquote>$1</blockquote>')
+          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+          .replace(/\n\n/g, '</p><p>')
+          .replace(/^(?!<[h|b|p|u|o|l|hr])/gm, function(match) {
+            return match;
+          });
+      }
+
+      // Check URL hash for direct post link
+      function checkHash() {
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+          const post = posts.find(p => p.id === hash);
+          if (post) { showPost(post); return; }
+        }
+        showList();
+      }
+
+      function showList() {
+        blogPost.classList.remove('active');
+        blogList.style.display = 'block';
+        window.location.hash = '';
+        document.title = 'Blog | Eng. Mariano Crimaldi, Ph.D.';
+      }
+
+      async function showPost(post) {
+        blogList.style.display = 'none';
+        blogPost.classList.add('active');
+        window.location.hash = post.id;
+        document.title = `${post.title} | Blog`;
+
+        blogPost.innerHTML = `<div class="loading">Loading post...</div>`;
+
+        try {
+          const response = await fetch(`../content/blog/${post.file}`);
+          const mdContent = await response.text();
+          const htmlContent = md2html(mdContent);
+
+          blogPost.innerHTML = `
+            <a class="blog-back" onclick="window.location.hash=''; location.reload();">← Back to all posts</a>
+            <div class="blog-post-header">
+              <h1 class="blog-post-title">${post.title}</h1>
+              <div class="blog-post-date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+            </div>
+            <div class="blog-post-body"><p>${htmlContent}</p></div>
+          `;
+        } catch (error) {
+          blogPost.innerHTML = `<div class="loading">Error loading post.</div>`;
+        }
+      }
+
+      // Load posts
+      try {
+        const response = await fetch('../content/blog/posts.json');
+        const data = await response.json();
+        posts = (data.posts || []).sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        if (posts.length === 0) {
+          blogList.innerHTML = '<div class="empty-blog">No posts yet. Stay tuned!</div>';
+        } else {
+          blogList.innerHTML = `<ul class="blog-list">${posts.map(post => `
+            <li class="blog-entry" data-id="${post.id}">
+              <div class="blog-date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+              <div class="blog-title">${post.title}</div>
+              <div class="blog-summary">${post.summary}</div>
+              ${post.tags ? `<div class="blog-tags">${post.tags.map(t => `<span class="blog-tag">${t}</span>`).join('')}</div>` : ''}
+            </li>
+          `).join('')}</ul>`;
+
+          // Click handlers
+          blogList.querySelectorAll('.blog-entry').forEach(el => {
+            el.addEventListener('click', () => {
+              const post = posts.find(p => p.id === el.dataset.id);
+              if (post) showPost(post);
+            });
+          });
+        }
+
+        checkHash();
+
+      } catch (error) {
+        blogList.innerHTML = `<div class="loading">Error loading blog. Check content/blog/posts.json</div>`;
+      }
+
+      window.addEventListener('hashchange', checkHash);
+    })();
+  </script>
+</body>
+</html>

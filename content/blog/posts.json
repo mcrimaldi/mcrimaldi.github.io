@@ -1,0 +1,17 @@
+{
+  "_instructions": [
+    "Add blog posts here. Each post needs: id, title, date, summary, file.",
+    "Create the .md file in content/blog/ with the post content.",
+    "Posts are displayed newest first."
+  ],
+  "posts": [
+    {
+      "id": "welcome",
+      "title": "Welcome to my blog",
+      "date": "2026-03-22",
+      "summary": "First post on this blog. Stay tuned for updates on my research activities.",
+      "tags": ["general"],
+      "file": "welcome.md"
+    }
+  ]
+}

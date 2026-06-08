@@ -205,6 +205,12 @@ class PublicationsSection extends SectionPlugin {
 
     const links = this._createProfileLinks();
     wrapper.appendChild(links);
+    // ← AGGIUNTO link alla pagina dedicata
+    const viewAll = document.createElement('a');
+    viewAll.href = 'publications/';
+    viewAll.className = 'blog-view-all';
+    viewAll.textContent = '→ View all publications';
+    wrapper.appendChild(viewAll);
 
     body.appendChild(wrapper);
   }

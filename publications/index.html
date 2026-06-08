@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Publications - Eng. Mariano Crimaldi, Ph.D.">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Publications | Eng. Mariano Crimaldi, Ph.D.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css?v=2.0">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <style>
+    body { background: var(--terminal-background, #0a0a0a); color: var(--terminal-text, #00ff00); font-family: 'IBM Plex Mono', monospace; margin: 0; padding: 0; }
+    .page-container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .page-header { border-bottom: 1px solid var(--terminal-border, #333); padding-bottom: 1rem; margin-bottom: 2rem; }
+    .page-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .page-nav a { color: var(--terminal-accent, #88ff88); text-decoration: none; font-size: 0.875rem; }
+    .page-nav a:hover { color: var(--terminal-primary, #00ff00); text-decoration: underline; }
+    .page-title { color: var(--terminal-primary, #00ff00); font-size: 1.5rem; margin: 0; text-shadow: 0 0 10px var(--terminal-glow, #00ff00); }
+    .metrics-bar { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0; padding: 1rem; border: 1px solid var(--terminal-border, #333); background: rgba(255,255,255,0.02); }
+    .metric { text-align: center; }
+    .metric-value { font-size: 1.5rem; color: var(--terminal-primary, #00ff00); font-weight: 600; }
+    .metric-label { font-size: 0.75rem; color: var(--terminal-text-muted, #666); margin-top: 0.25rem; }
+    .pub-list { list-style: none; padding: 0; margin: 0; }
+    .pub-item { padding: 1rem 0; border-bottom: 1px dashed var(--terminal-border-dim, #222); }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-rank { display: inline-block; min-width: 2rem; color: var(--terminal-text-muted, #666); font-size: 0.8125rem; }
+    .pub-title { color: var(--terminal-text, #00ff00); font-weight: 500; }
+    .pub-title a { color: inherit; text-decoration: none; }
+    .pub-title a:hover { color: var(--terminal-accent, #88ff88); text-decoration: underline; }
+    .pub-meta { font-size: 0.8125rem; color: var(--terminal-text-muted, #666); margin-top: 0.35rem; }
+    .pub-journal { color: var(--terminal-accent, #88ff88); }
+    .pub-citations { color: var(--terminal-primary, #00ff00); font-weight: 500; }
+    .pub-oa { color: #f57c00; font-size: 0.75rem; padding: 0.1rem 0.4rem; border: 1px solid #f57c00; border-radius: 3px; margin-left: 0.5rem; }
+    .loading { color: var(--terminal-text-dim, #555); text-align: center; padding: 3rem 0; }
+    .filter-bar { margin-bottom: 1.5rem; }
+    .filter-bar input { background: var(--terminal-background, #0a0a0a); color: var(--terminal-text, #00ff00); border: 1px solid var(--terminal-border, #333); padding: 0.5rem 0.75rem; font-family: inherit; font-size: 0.875rem; width: 100%; box-sizing: border-box; }
+    .filter-bar input::placeholder { color: var(--terminal-text-muted, #666); }
+    .filter-bar input:focus { outline: none; border-color: var(--terminal-primary, #00ff00); box-shadow: 0 0 5px var(--terminal-glow, #00ff00); }
+    .results-count { font-size: 0.8125rem; color: var(--terminal-text-muted, #666); margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <nav class="page-nav">
+      <a href="../">← Back to Home</a>
+      <span style="color: var(--terminal-text-muted, #666); font-size: 0.8125rem;">mcrimaldi.github.io/publications</span>
+    </nav>
+    
+    <header class="page-header">
+      <h1 class="page-title">📚 Publications</h1>
+    </header>
+
+    <div id="metrics-bar" class="metrics-bar" style="display:none;"></div>
+    
+    <div class="filter-bar">
+      <input type="text" id="search-input" placeholder="🔍 Filter publications by title, author, journal, year..." />
+    </div>
+    
+    <div id="results-count" class="results-count"></div>
+    
+    <div id="publications-container">
+      <div class="loading">Loading publications...</div>
+    </div>
+  </div>
+
+  <script>
+    (async function() {
+      const container = document.getElementById('publications-container');
+      const metricsBar = document.getElementById('metrics-bar');
+      const searchInput = document.getElementById('search-input');
+      const resultsCount = document.getElementById('results-count');
+      
+      let allPublications = [];
+      
+      try {
+        const response = await fetch('../content/publications.json');
+        const data = await response.json();
+        
+        // Render metrics
+        if (data.metrics && data.metrics.source !== 'Configure ORCID above') {
+          metricsBar.style.display = 'flex';
+          metricsBar.innerHTML = `
+            <div class="metric"><div class="metric-value">${data.metrics.hIndex}</div><div class="metric-label">h-index</div></div>
+            <div class="metric"><div class="metric-value">${data.metrics.i10Index}</div><div class="metric-label">i10-index</div></div>
+            <div class="metric"><div class="metric-value">${data.metrics.totalCitations}</div><div class="metric-label">Citations</div></div>
+            <div class="metric"><div class="metric-value">${data.metrics.worksCount}</div><div class="metric-label">Works</div></div>
+            <div class="metric"><div class="metric-value">${data.metrics.source}</div><div class="metric-label">Source</div></div>
+            <div class="metric"><div class="metric-value">${data.metrics.lastUpdated || '-'}</div><div class="metric-label">Updated</div></div>
+          `;
+        }
+        
+        // Store and render publications
+        allPublications = (data.publications || []).sort((a, b) => b.citations - a.citations);
+        renderPublications(allPublications);
+        
+        // Search filter
+        searchInput.addEventListener('input', (e) => {
+          const q = e.target.value.toLowerCase();
+          const filtered = allPublications.filter(p =>
+            (p.title || '').toLowerCase().includes(q) ||
+            (p.authors || '').toLowerCase().includes(q) ||
+            (p.journal || '').toLowerCase().includes(q) ||
+            (p.year || '').toLowerCase().includes(q)
+          );
+          renderPublications(filtered);
+        });
+        
+      } catch (error) {
+        container.innerHTML = `<div class="loading">Error loading publications. Configure your ORCID in content/publications.json</div>`;
+      }
+      
+      function renderPublications(pubs) {
+        resultsCount.textContent = `Showing ${pubs.length} publication${pubs.length !== 1 ? 's' : ''}`;
+        
+        if (pubs.length === 0) {
+          container.innerHTML = '<div class="loading">No publications found.</div>';
+          return;
+        }
+        
+        const medals = ['🥇', '🥈', '🥉'];
+        
+        container.innerHTML = `<ul class="pub-list">${pubs.map((pub, i) => `
+          <li class="pub-item">
+            <span class="pub-rank">${i < 3 ? medals[i] : (i + 1) + '.'}</span>
+            <span class="pub-title">${pub.url && pub.url !== '#' ? `<a href="${pub.url}" target="_blank" rel="noopener">${pub.title}</a>` : pub.title}</span>
+            ${pub.openAccess ? '<span class="pub-oa">OA</span>' : ''}
+            <div class="pub-meta">
+              ${pub.authors ? pub.authors + ' · ' : ''}
+              <span class="pub-journal">${pub.journal || ''}</span>
+              ${pub.year ? ' (' + pub.year + ')' : ''}
+              ${pub.citations > 0 ? ' · <span class="pub-citations">' + pub.citations + ' citations</span>' : ''}
+            </div>
+          </li>
+        `).join('')}</ul>`;
+      }
+    })();
+  </script>
+</body>
+</html>

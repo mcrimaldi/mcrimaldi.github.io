@@ -14,7 +14,7 @@ class ContactSection extends SectionPlugin {
   static command = 'cat ~/.contact/info.txt';
   static title = 'Contact';
   static contentFile = 'content/contact.json';
-  static order = 6;
+  static order = 7;  // ← ERA 6
 
   constructor(context) {
     super(context);

@@ -27,6 +27,7 @@ import { PublicationsSection } from './plugins/PublicationsSection.js';
 import { ProjectsSection } from './plugins/ProjectsSection.js';
 import { ExperienceSection } from './plugins/ExperienceSection.js';
 import { ContactSection } from './plugins/ContactSection.js';
+import { BlogSection } from './plugins/BlogSection.js';  // ← AGGIUNTO
 
 // Content adapters
 import { markdownAdapter } from './adapters/MarkdownAdapter.js';
@@ -88,6 +89,7 @@ function registerPlugins() {
   Terminal.registerPlugin(ProjectsSection);
   Terminal.registerPlugin(ExperienceSection);
   Terminal.registerPlugin(ContactSection);
+  Terminal.registerPlugin(BlogSection);  // ← AGGIUNTO
 }
 
 /**
