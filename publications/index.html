@@ -42,6 +42,12 @@
     .filter-bar input::placeholder { color: var(--terminal-text-muted, #666); }
     .filter-bar input:focus { outline: none; border-color: var(--terminal-primary, #00ff00); box-shadow: 0 0 5px var(--terminal-glow, #00ff00); }
     .results-count { font-size: 0.8125rem; color: var(--terminal-text-muted, #666); margin-bottom: 1rem; }
+    .sort-bar { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
+    .sort-bar label { font-size: 0.8125rem; color: var(--terminal-text-muted, #666); }
+    .sort-bar select { background: var(--terminal-background, #0a0a0a); color: var(--terminal-text, #00ff00); border: 1px solid var(--terminal-border, #333); padding: 0.4rem 0.5rem; font-family: inherit; font-size: 0.8125rem; cursor: pointer; }
+    .sort-bar select:focus { outline: none; border-color: var(--terminal-primary, #00ff00); box-shadow: 0 0 5px var(--terminal-glow, #00ff00); }
+    .pub-authors { font-size: 0.8125rem; color: var(--terminal-text-dim, #999); margin-top: 0.2rem; line-height: 1.4; }
+    .pub-authors .author-highlight { color: var(--terminal-accent, #88ff88); }
   </style>
 </head>
 <body>
@@ -59,6 +65,17 @@
     
     <div class="filter-bar">
       <input type="text" id="search-input" placeholder="🔍 Filter publications by title, author, journal, year..." />
+      <div class="sort-bar">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+          <option value="date-desc">Date (newest first)</option>
+          <option value="date-asc">Date (oldest first)</option>
+          <option value="citations-desc">Citations (highest first)</option>
+          <option value="citations-asc">Citations (lowest first)</option>
+          <option value="title-asc">Title (A → Z)</option>
+          <option value="title-desc">Title (Z → A)</option>
+        </select>
+      </div>
     </div>
     
     <div id="results-count" class="results-count"></div>
@@ -73,9 +90,44 @@
       const container = document.getElementById('publications-container');
       const metricsBar = document.getElementById('metrics-bar');
       const searchInput = document.getElementById('search-input');
+      const sortSelect = document.getElementById('sort-select');
       const resultsCount = document.getElementById('results-count');
       
       let allPublications = [];
+      let currentSort = 'date-desc';
+      
+      function sortPublications(pubs, sortKey) {
+        const sorted = [...pubs];
+        switch (sortKey) {
+          case 'date-desc':    return sorted.sort((a, b) => (b.year || '0').localeCompare(a.year || '0'));
+          case 'date-asc':     return sorted.sort((a, b) => (a.year || '0').localeCompare(b.year || '0'));
+          case 'citations-desc': return sorted.sort((a, b) => b.citations - a.citations);
+          case 'citations-asc':  return sorted.sort((a, b) => a.citations - b.citations);
+          case 'title-asc':    return sorted.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+          case 'title-desc':   return sorted.sort((a, b) => (b.title || '').localeCompare(a.title || ''));
+          default:             return sorted;
+        }
+      }
+      
+      function formatAuthors(authors) {
+        if (!authors) return '';
+        if (Array.isArray(authors)) return authors.join(', ');
+        return String(authors);
+      }
+      
+      function applyFiltersAndSort() {
+        const q = searchInput.value.toLowerCase();
+        let filtered = allPublications;
+        if (q) {
+          filtered = allPublications.filter(p =>
+            (p.title || '').toLowerCase().includes(q) ||
+            formatAuthors(p.authors).toLowerCase().includes(q) ||
+            (p.journal || '').toLowerCase().includes(q) ||
+            (p.year || '').toLowerCase().includes(q)
+          );
+        }
+        renderPublications(sortPublications(filtered, currentSort));
+      }
       
       try {
         const response = await fetch('../content/publications.json');
@@ -94,20 +146,15 @@
           `;
         }
         
-        // Store and render publications
-        allPublications = (data.publications || []).sort((a, b) => b.citations - a.citations);
-        renderPublications(allPublications);
+        // Store publications and render with default sort (date desc)
+        allPublications = data.publications || [];
+        applyFiltersAndSort();
         
-        // Search filter
-        searchInput.addEventListener('input', (e) => {
-          const q = e.target.value.toLowerCase();
-          const filtered = allPublications.filter(p =>
-            (p.title || '').toLowerCase().includes(q) ||
-            (p.authors || '').toLowerCase().includes(q) ||
-            (p.journal || '').toLowerCase().includes(q) ||
-            (p.year || '').toLowerCase().includes(q)
-          );
-          renderPublications(filtered);
+        // Event listeners
+        searchInput.addEventListener('input', applyFiltersAndSort);
+        sortSelect.addEventListener('change', (e) => {
+          currentSort = e.target.value;
+          applyFiltersAndSort();
         });
         
       } catch (error) {
@@ -122,16 +169,15 @@
           return;
         }
         
-        const medals = ['🥇', '🥈', '🥉'];
-        
         container.innerHTML = `<ul class="pub-list">${pubs.map((pub, i) => `
           <li class="pub-item">
-            <span class="pub-rank">${i < 3 ? medals[i] : (i + 1) + '.'}</span>
+            <span class="pub-rank">${(i + 1) + '.'}</span>
             <span class="pub-title">${pub.url && pub.url !== '#' ? `<a href="${pub.url}" target="_blank" rel="noopener">${pub.title}</a>` : pub.title}</span>
             ${pub.openAccess ? '<span class="pub-oa">OA</span>' : ''}
+            <div class="pub-authors">${formatAuthors(pub.authors)}</div>
             <div class="pub-meta">
-              ${pub.authors ? pub.authors + ' · ' : ''}
               <span class="pub-journal">${pub.journal || ''}</span>
+              ${pub.volume ? ', ' + pub.volume : ''}${pub.issue ? '(' + pub.issue + ')' : ''}${pub.pages ? ', ' + pub.pages : ''}
               ${pub.year ? ' (' + pub.year + ')' : ''}
               ${pub.citations > 0 ? ' · <span class="pub-citations">' + pub.citations + ' citations</span>' : ''}
             </div>
