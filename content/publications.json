@@ -6,10 +6,10 @@
   "affiliation": "",
   "metrics": {
     "hIndex": 13,
-    "i10Index": 15,
-    "totalCitations": 613,
+    "i10Index": 16,
+    "totalCitations": 623,
     "worksCount": 32,
-    "lastUpdated": "2026-04-27",
+    "lastUpdated": "2026-06-08",
     "source": "Scopus"
   },
   "publications": [
@@ -21,7 +21,7 @@
       "volume": "8",
       "issue": "1",
       "pages": "",
-      "citations": 219,
+      "citations": 225,
       "url": "https://doi.org/10.1186/s40538-021-00217-8",
       "openAccess": true,
       "type": "Review"
@@ -47,7 +47,7 @@
       "volume": "58",
       "issue": "",
       "pages": "373-378",
-      "citations": 43,
+      "citations": 45,
       "url": "https://doi.org/10.3303/CET1758063",
       "openAccess": false,
       "type": "Article"
@@ -183,6 +183,19 @@
       "type": "Review"
     },
     {
+      "title": "Mapping Soil Organic Carbon Stock Using Hyperspectral Remote Sensing: A Case Study in the Sele River Plain in Southern Italy",
+      "authors": "Francos N.",
+      "journal": "Remote Sensing",
+      "year": "2024",
+      "volume": "16",
+      "issue": "5",
+      "pages": "",
+      "citations": 10,
+      "url": "https://doi.org/10.3390/rs16050897",
+      "openAccess": true,
+      "type": "Article"
+    },
+    {
       "title": "Comprehensive Evaluation of Multispectral Image Registration Strategies in Heterogenous Agriculture Environment",
       "authors": "Rana S.",
       "journal": "Journal of Imaging",
@@ -209,19 +222,6 @@
       "type": "Article"
     },
     {
-      "title": "Mapping Soil Organic Carbon Stock Using Hyperspectral Remote Sensing: A Case Study in the Sele River Plain in Southern Italy",
-      "authors": "Francos N.",
-      "journal": "Remote Sensing",
-      "year": "2024",
-      "volume": "16",
-      "issue": "5",
-      "pages": "",
-      "citations": 9,
-      "url": "https://doi.org/10.3390/rs16050897",
-      "openAccess": true,
-      "type": "Article"
-    },
-    {
       "title": "Chip quality as a function of harvesting methodology",
       "authors": "Faugno S.",
       "journal": "Chemical Engineering Transactions",
@@ -242,7 +242,7 @@
       "volume": "67",
       "issue": "",
       "pages": "827-835",
-      "citations": 7,
+      "citations": 8,
       "url": "https://doi.org/10.1007/978-3-030-39299-4_89",
       "openAccess": false,
       "type": "Book Chapter"

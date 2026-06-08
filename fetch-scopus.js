@@ -155,7 +155,7 @@ function transformScopusData(authorData, searchData) {
   
   const publications = entries.map(entry => ({
     title: entry['dc:title'] || 'Untitled',
-    authors: entry['dc:creator'] || '',
+    authors: (entry['author'] || []).map(a => a['authname'] || `${a['surname'] || ''} ${a['given-name'] || ''}`.trim()).join(', ') || entry['dc:creator'] || '',
     journal: entry['prism:publicationName'] || '',
     year: entry['prism:coverDate']?.substring(0, 4) || '',
     volume: entry['prism:volume'] || '',
