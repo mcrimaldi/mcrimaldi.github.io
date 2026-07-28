@@ -5,7 +5,6 @@
   "affiliation": "",
   "scopusProfile": "https://www.scopus.com/authid/detail.uri?authorId=57191481522",
   "metrics": {
-<<<<<<< HEAD
     "hIndex": 13,
     "i10Index": 16,
     "totalCitations": 640,
@@ -314,7 +313,7 @@
       "type": "Conference Paper"
     },
     {
-      "title": "A low-cost mo vable station for fast and effective agroclimatic monitoring",
+      "title": "A low-cost movable station for fast and effective agroclimatic monitoring",
       "authors": "Martino R., Nicolazzo M., Crimaldi M., Langella G.",
       "journal": "2019 IEEE International Workshop on Metrology for Agriculture and Forestry Metroagrifor 2019 Proceedings",
       "year": "2019",
@@ -431,14 +430,4 @@
       "type": "Conference Paper"
     }
   ]
-=======
-    "hIndex": 0,
-    "i10Index": 0,
-    "totalCitations": 0,
-    "worksCount": 0,
-    "lastUpdated": "2026-07-26",
-    "source": "Scopus"
-  },
-  "publications": []
->>>>>>> bd60534968259983e4c57a11eb77f4bcffb99827
 }
