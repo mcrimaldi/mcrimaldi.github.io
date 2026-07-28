@@ -7,9 +7,9 @@
   "metrics": {
     "hIndex": 13,
     "i10Index": 16,
-    "totalCitations": 623,
+    "totalCitations": 640,
     "worksCount": 32,
-    "lastUpdated": "2026-06-08",
+    "lastUpdated": "2026-07-28",
     "source": "Scopus"
   },
   "publications": [
@@ -21,7 +21,7 @@
       "volume": "8",
       "issue": "1",
       "pages": "",
-      "citations": 225,
+      "citations": 234,
       "url": "https://doi.org/10.1186/s40538-021-00217-8",
       "openAccess": true,
       "type": "Review"
@@ -73,7 +73,7 @@
       "volume": "137",
       "issue": "4",
       "pages": "541-552",
-      "citations": 27,
+      "citations": 28,
       "url": "https://doi.org/10.1007/s10342-018-1122-3",
       "openAccess": false,
       "type": "Article"
@@ -105,6 +105,19 @@
       "type": "Conference Paper"
     },
     {
+      "title": "Effects of an automatic milking system on milk yield and quality of Mediterranean buffaloes",
+      "authors": "Sannino M., Faugno S., Crimaldi M., Di Francia A., Ardito L., Serrapica F., Masucci F.",
+      "journal": "Journal of Dairy Science",
+      "year": "2018",
+      "volume": "101",
+      "issue": "9",
+      "pages": "8308-8312",
+      "citations": 23,
+      "url": "https://doi.org/10.3168/jds.2017-14157",
+      "openAccess": true,
+      "type": "Article"
+    },
+    {
       "title": "First measurements of spray deposition obtained from UAV spray application technique",
       "authors": "Sarghini F., Visacki V., Sedlar A., Crimaldi M., Cristiano V., Vivo A.D.",
       "journal": "2019 IEEE International Workshop on Metrology for Agriculture and Forestry Metroagrifor 2019 Proceedings",
@@ -131,19 +144,6 @@
       "type": "Conference Paper"
     },
     {
-      "title": "Effects of an automatic milking system on milk yield and quality of Mediterranean buffaloes",
-      "authors": "Sannino M., Faugno S., Crimaldi M., Di Francia A., Ardito L., Serrapica F., Masucci F.",
-      "journal": "Journal of Dairy Science",
-      "year": "2018",
-      "volume": "101",
-      "issue": "9",
-      "pages": "8308-8312",
-      "citations": 21,
-      "url": "https://doi.org/10.3168/jds.2017-14157",
-      "openAccess": true,
-      "type": "Article"
-    },
-    {
       "title": "Mechanical oil extraction of Nicotiana tabacum L. Seeds: Analysis of main extraction parameters on oil yield",
       "authors": "Faugno S., del Piano L., Crimaldi M., Ricciardiello G., Sannino M.",
       "journal": "Journal of Agricultural Engineering",
@@ -166,7 +166,7 @@
       "pages": "4009-4015",
       "citations": 16,
       "url": "https://doi.org/10.1007/s13197-017-2865-4",
-      "openAccess": true,
+      "openAccess": false,
       "type": "Article"
     },
     {
@@ -183,6 +183,19 @@
       "type": "Review"
     },
     {
+      "title": "Comprehensive Evaluation of Multispectral Image Registration Strategies in Heterogenous Agriculture Environment",
+      "authors": "Rana S., Gerbino S., Crimaldi M., Cirillo V., Carillo P., Sarghini F., Maggio A.",
+      "journal": "Journal of Imaging",
+      "year": "2024",
+      "volume": "10",
+      "issue": "3",
+      "pages": "",
+      "citations": 11,
+      "url": "https://doi.org/10.3390/jimaging10030061",
+      "openAccess": true,
+      "type": "Article"
+    },
+    {
       "title": "Mapping Soil Organic Carbon Stock Using Hyperspectral Remote Sensing: A Case Study in the Sele River Plain in Southern Italy",
       "authors": "Francos N., Nasta P., Allocca C., Sica B., Mazzitelli C., Lazzaro U., D’Urso G., Belfiore O.R., Crimaldi M., Sarghini F., Ben-Dor E., Romano N.",
       "journal": "Remote Sensing",
@@ -192,19 +205,6 @@
       "pages": "",
       "citations": 10,
       "url": "https://doi.org/10.3390/rs16050897",
-      "openAccess": true,
-      "type": "Article"
-    },
-    {
-      "title": "Comprehensive Evaluation of Multispectral Image Registration Strategies in Heterogenous Agriculture Environment",
-      "authors": "Rana S., Gerbino S., Crimaldi M., Cirillo V., Carillo P., Sarghini F., Maggio A.",
-      "journal": "Journal of Imaging",
-      "year": "2024",
-      "volume": "10",
-      "issue": "3",
-      "pages": "",
-      "citations": 10,
-      "url": "https://doi.org/10.3390/jimaging10030061",
       "openAccess": true,
       "type": "Article"
     },
@@ -255,8 +255,21 @@
       "volume": "54",
       "issue": "",
       "pages": "",
-      "citations": 6,
+      "citations": 7,
       "url": "https://doi.org/10.1016/j.dib.2024.110506",
+      "openAccess": true,
+      "type": "Data Paper"
+    },
+    {
+      "title": "RafanoSet: Dataset of raw, manually, and automatically annotated Raphanus Raphanistrum weed images for object detection and segmentation.",
+      "authors": "Rana S., Gerbino S., Barretta D., Carillo P., Crimaldi M., Cirillo V., Maggio A., Sarghini F.",
+      "journal": "Data in Brief",
+      "year": "2024",
+      "volume": "54",
+      "issue": "",
+      "pages": "",
+      "citations": 7,
+      "url": "https://doi.org/10.1016/j.dib.2024.110430",
       "openAccess": true,
       "type": "Data Paper"
     },
@@ -274,17 +287,17 @@
       "type": "Article"
     },
     {
-      "title": "RafanoSet: Dataset of raw, manually, and automatically annotated Raphanus Raphanistrum weed images for object detection and segmentation.",
-      "authors": "Rana S., Gerbino S., Barretta D., Carillo P., Crimaldi M., Cirillo V., Maggio A., Sarghini F.",
-      "journal": "Data in Brief",
-      "year": "2024",
-      "volume": "54",
+      "title": "Comparative Analysis of Feature and Intensity Based Image Registration Algorithms in Variable Agricultural Scenarios",
+      "authors": "Rana S., Gerbino S., Mehrishi P., Crimaldi M.",
+      "journal": "Lecture Notes in Networks and Systems",
+      "year": "2022",
+      "volume": "514 LNNS",
       "issue": "",
-      "pages": "",
-      "citations": 6,
-      "url": "https://doi.org/10.1016/j.dib.2024.110430",
-      "openAccess": true,
-      "type": "Data Paper"
+      "pages": "143-160",
+      "citations": 4,
+      "url": "https://doi.org/10.1007/978-3-031-12413-6_12",
+      "openAccess": false,
+      "type": "Conference Paper"
     },
     {
       "title": "Biomass quality of different species after storage",
@@ -313,15 +326,15 @@
       "type": "Conference Paper"
     },
     {
-      "title": "Comparative Analysis of Feature and Intensity Based Image Registration Algorithms in Variable Agricultural Scenarios",
-      "authors": "Rana S., Gerbino S., Mehrishi P., Crimaldi M.",
-      "journal": "Lecture Notes in Networks and Systems",
-      "year": "2022",
-      "volume": "514 LNNS",
+      "title": "Use of artificial intelligence on UAVs for real time plant diseases detection",
+      "authors": "Ivanov P., Crimaldi M., Cristiano V., Isernia M., Sarghini F.",
+      "journal": "Acta Horticulturae",
+      "year": "2021",
+      "volume": "1311",
       "issue": "",
-      "pages": "143-160",
+      "pages": "335-341",
       "citations": 3,
-      "url": "https://doi.org/10.1007/978-3-031-12413-6_12",
+      "url": "https://doi.org/10.17660/ActaHortic.2021.1311.42",
       "openAccess": false,
       "type": "Conference Paper"
     },
@@ -348,19 +361,6 @@
       "pages": "-94",
       "citations": 2,
       "url": "https://doi.org/10.3850/IAHR-39WC2521-71192022SS9",
-      "openAccess": false,
-      "type": "Conference Paper"
-    },
-    {
-      "title": "Use of artificial intelligence on UAVs for real time plant diseases detection",
-      "authors": "Ivanov P., Crimaldi M., Cristiano V., Isernia M., Sarghini F.",
-      "journal": "Acta Horticulturae",
-      "year": "2021",
-      "volume": "1311",
-      "issue": "",
-      "pages": "335-341",
-      "citations": 2,
-      "url": "https://doi.org/10.17660/ActaHortic.2021.1311.42",
       "openAccess": false,
       "type": "Conference Paper"
     },
