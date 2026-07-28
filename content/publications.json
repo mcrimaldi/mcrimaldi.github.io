@@ -1,10 +1,11 @@
 {
-  "scholarProfile": "https://scholar.google.com/citations?user=Ofzq0M4AAAAJ",
-  "orcidProfile": "https://orcid.org/0000-0002-4579-5682",
-  "scopusProfile": "https://www.scopus.com/authid/detail.uri?authorId=57191481522",
+  "_generatedAt": "2026-07-26T05:36:08.892Z",
+  "_source": "Scopus API via GitHub Actions",
   "authorName": "",
   "affiliation": "",
+  "scopusProfile": "https://www.scopus.com/authid/detail.uri?authorId=57191481522",
   "metrics": {
+<<<<<<< HEAD
     "hIndex": 13,
     "i10Index": 16,
     "totalCitations": 640,
@@ -430,4 +431,14 @@
       "type": "Conference Paper"
     }
   ]
+=======
+    "hIndex": 0,
+    "i10Index": 0,
+    "totalCitations": 0,
+    "worksCount": 0,
+    "lastUpdated": "2026-07-26",
+    "source": "Scopus"
+  },
+  "publications": []
+>>>>>>> bd60534968259983e4c57a11eb77f4bcffb99827
 }
