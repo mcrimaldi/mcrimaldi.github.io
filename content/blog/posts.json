@@ -2,6 +2,8 @@
   "_instructions": [
     "Add blog posts here. Each post needs: id, title, date, summary, file.",
     "Create the .md file in content/blog/ with the post content.",
+    "Bilingual posts: in the .md file put the Italian text after a line '<!-- lang:it -->' and the English text after a line '<!-- lang:en -->'.",
+    "Optional 'i18n' object localizes title/summary on the blog page; plain 'title'/'summary' are the fallback (and are used on the home page).",
     "Posts are displayed newest first."
   ],
   "posts": [
@@ -10,6 +12,16 @@
       "title": "Welcome to my blog",
       "date": "2026-03-22",
       "summary": "First post on this blog. Stay tuned for updates on my research activities.",
+      "i18n": {
+        "it": {
+          "title": "Benvenuti nel mio blog",
+          "summary": "Primo post di questo blog. Restate sintonizzati per aggiornamenti sulle mie attività di ricerca."
+        },
+        "en": {
+          "title": "Welcome to my blog",
+          "summary": "First post on this blog. Stay tuned for updates on my research activities."
+        }
+      },
       "tags": ["general"],
       "file": "welcome.md"
     }

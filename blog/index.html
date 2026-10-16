@@ -50,6 +50,14 @@
     .blog-post-body hr { border: none; border-top: 1px dashed var(--terminal-border, #333); margin: 2rem 0; }
     .blog-post-body em { color: var(--terminal-text-dim, #888); }
 
+    /* Language switch */
+    .page-nav-right { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 0.25rem 1rem; }
+    .lang-switch { display: inline-flex; align-items: center; font-size: 0.8125rem; color: var(--terminal-text-muted, #666); }
+    .lang-switch button { background: none; border: none; padding: 0 0.35rem; font: inherit; color: var(--terminal-text-muted, #666); cursor: pointer; }
+    .lang-switch button:hover { color: var(--terminal-accent, #88ff88); }
+    .lang-switch button[aria-pressed="true"] { color: var(--terminal-primary, #00ff00); text-shadow: 0 0 6px var(--terminal-glow, #00ff00); font-weight: 600; }
+    .lang-switch button:focus-visible { outline: 1px dashed var(--terminal-accent, #88ff88); outline-offset: 2px; }
+
     .loading { color: var(--terminal-text-dim, #555); text-align: center; padding: 3rem 0; }
     .empty-blog { color: var(--terminal-text-dim, #555); text-align: center; padding: 3rem 0; }
   </style>
@@ -57,8 +65,13 @@
 <body>
   <div class="page-container">
     <nav class="page-nav">
-      <a href="../">← Back to Home</a>
-      <span style="color: var(--terminal-text-muted, #666); font-size: 0.8125rem;">mcrimaldi.github.io/blog</span>
+      <a href="../" id="nav-home">← Back to Home</a>
+      <div class="page-nav-right">
+        <span class="lang-switch" role="group" aria-label="Language / Lingua">
+          [<button type="button" data-lang="it" aria-pressed="false">ITA</button>|<button type="button" data-lang="en" aria-pressed="false">ENG</button>]
+        </span>
+        <span style="color: var(--terminal-text-muted, #666); font-size: 0.8125rem;">mcrimaldi.github.io/blog</span>
+      </div>
     </nav>
     
     <header class="page-header">
@@ -79,6 +92,76 @@
       const blogList = document.getElementById('blog-list');
       const blogPost = document.getElementById('blog-post');
       let posts = [];
+      let currentPost = null;
+      const mdCache = new Map();
+
+      // ---- i18n ----
+      const LANGS = ['it', 'en'];
+      const DEFAULT_LANG = 'it';
+      const LANG_KEY = 'blog-lang';
+      const UI = {
+        it: { home: '← Torna alla Home', back: '← Tutti i post', loadingPosts: 'Caricamento post...', loadingPost: 'Caricamento post...',
+              errorPost: 'Errore nel caricamento del post.', errorBlog: 'Errore nel caricamento del blog. Controlla content/blog/posts.json',
+              empty: 'Ancora nessun post. Resta sintonizzato!', locale: 'it-IT' },
+        en: { home: '← Back to Home', back: '← Back to all posts', loadingPosts: 'Loading posts...', loadingPost: 'Loading post...',
+              errorPost: 'Error loading post.', errorBlog: 'Error loading blog. Check content/blog/posts.json',
+              empty: 'No posts yet. Stay tuned!', locale: 'en-US' }
+      };
+
+      function readLang() {
+        try { const l = localStorage.getItem(LANG_KEY); if (LANGS.includes(l)) return l; } catch (e) {}
+        return DEFAULT_LANG;
+      }
+      let lang = readLang();
+
+      const t = key => UI[lang][key];
+      const fmtDate = d => new Date(d).toLocaleDateString(t('locale'), { year: 'numeric', month: 'long', day: 'numeric' });
+
+      // Localized post field: uses post.i18n[lang][field] if present, else the plain field
+      function field(post, name) {
+        const loc = post.i18n && post.i18n[lang];
+        return (loc && loc[name]) || post[name] || '';
+      }
+
+      // Split a Markdown file into language sections marked by <!-- lang:it --> / <!-- lang:en -->.
+      // Files without markers are returned whole (backward compatible).
+      function pickLanguage(md) {
+        const re = /^[ \t]*<!--\s*lang:\s*([a-z]{2})\s*-->[ \t]*$/gim;
+        const marks = [...md.matchAll(re)];
+        if (marks.length === 0) return { body: md, available: [] };
+        const sections = {};
+        marks.forEach((m, i) => {
+          const start = m.index + m[0].length;
+          const end = i + 1 < marks.length ? marks[i + 1].index : md.length;
+          sections[m[1].toLowerCase()] = md.slice(start, end).trim();
+        });
+        const available = Object.keys(sections);
+        const chosen = sections[lang] != null ? lang : (sections[DEFAULT_LANG] != null ? DEFAULT_LANG : available[0]);
+        return { body: sections[chosen], available };
+      }
+
+      function updateLangUI() {
+        document.documentElement.lang = lang;
+        document.getElementById('nav-home').textContent = t('home');
+        document.querySelectorAll('.lang-switch button').forEach(b => {
+          b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+        });
+      }
+
+      function setLang(next) {
+        if (!LANGS.includes(next) || next === lang) return;
+        lang = next;
+        try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+        updateLangUI();
+        renderList();
+        if (currentPost && blogPost.classList.contains('active')) renderPost(currentPost);
+      }
+
+      document.querySelectorAll('.lang-switch button').forEach(b => {
+        b.addEventListener('click', () => setLang(b.dataset.lang));
+      });
+      updateLangUI();
+      blogList.innerHTML = `<div class="loading">${t('loadingPosts')}</div>`;
 
       // Simple Markdown to HTML converter
       function md2html(md) {
@@ -109,36 +192,71 @@
       }
 
       function showList() {
+        currentPost = null;
         blogPost.classList.remove('active');
         blogList.style.display = 'block';
         window.location.hash = '';
         document.title = 'Blog | Eng. Mariano Crimaldi, Ph.D.';
       }
 
-      async function showPost(post) {
+      function showPost(post) {
+        currentPost = post;
         blogList.style.display = 'none';
         blogPost.classList.add('active');
         window.location.hash = post.id;
-        document.title = `${post.title} | Blog`;
+        renderPost(post);
+      }
 
-        blogPost.innerHTML = `<div class="loading">Loading post...</div>`;
+      async function renderPost(post) {
+        document.title = `${field(post, 'title')} | Blog`;
+
+        if (!mdCache.has(post.file)) {
+          blogPost.innerHTML = `<div class="loading">${t('loadingPost')}</div>`;
+        }
 
         try {
-          const response = await fetch(`../content/blog/${post.file}`);
-          const mdContent = await response.text();
-          const htmlContent = md2html(mdContent);
+          if (!mdCache.has(post.file)) {
+            const response = await fetch(`../content/blog/${post.file}`);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            mdCache.set(post.file, await response.text());
+          }
+          if (currentPost !== post) return; // user navigated away meanwhile
+          const { body } = pickLanguage(mdCache.get(post.file));
+          const htmlContent = md2html(body);
 
           blogPost.innerHTML = `
-            <a class="blog-back" onclick="window.location.hash=''; location.reload();">← Back to all posts</a>
+            <a class="blog-back" onclick="window.location.hash=''; location.reload();">${t('back')}</a>
             <div class="blog-post-header">
-              <h1 class="blog-post-title">${post.title}</h1>
-              <div class="blog-post-date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+              <h1 class="blog-post-title">${field(post, 'title')}</h1>
+              <div class="blog-post-date">${fmtDate(post.date)}</div>
             </div>
             <div class="blog-post-body"><p>${htmlContent}</p></div>
           `;
         } catch (error) {
-          blogPost.innerHTML = `<div class="loading">Error loading post.</div>`;
+          blogPost.innerHTML = `<div class="loading">${t('errorPost')}</div>`;
         }
+      }
+
+      function renderList() {
+        if (posts.length === 0) {
+          blogList.innerHTML = `<div class="empty-blog">${t('empty')}</div>`;
+          return;
+        }
+        blogList.innerHTML = `<ul class="blog-list">${posts.map(post => `
+          <li class="blog-entry" data-id="${post.id}">
+            <div class="blog-date">${fmtDate(post.date)}</div>
+            <div class="blog-title">${field(post, 'title')}</div>
+            <div class="blog-summary">${field(post, 'summary')}</div>
+            ${post.tags ? `<div class="blog-tags">${post.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}</div>` : ''}
+          </li>
+        `).join('')}</ul>`;
+
+        blogList.querySelectorAll('.blog-entry').forEach(el => {
+          el.addEventListener('click', () => {
+            const post = posts.find(p => p.id === el.dataset.id);
+            if (post) showPost(post);
+          });
+        });
       }
 
       // Load posts
@@ -147,31 +265,12 @@
         const data = await response.json();
         posts = (data.posts || []).sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        if (posts.length === 0) {
-          blogList.innerHTML = '<div class="empty-blog">No posts yet. Stay tuned!</div>';
-        } else {
-          blogList.innerHTML = `<ul class="blog-list">${posts.map(post => `
-            <li class="blog-entry" data-id="${post.id}">
-              <div class="blog-date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
-              <div class="blog-title">${post.title}</div>
-              <div class="blog-summary">${post.summary}</div>
-              ${post.tags ? `<div class="blog-tags">${post.tags.map(t => `<span class="blog-tag">${t}</span>`).join('')}</div>` : ''}
-            </li>
-          `).join('')}</ul>`;
-
-          // Click handlers
-          blogList.querySelectorAll('.blog-entry').forEach(el => {
-            el.addEventListener('click', () => {
-              const post = posts.find(p => p.id === el.dataset.id);
-              if (post) showPost(post);
-            });
-          });
-        }
+        renderList();
 
         checkHash();
 
       } catch (error) {
-        blogList.innerHTML = `<div class="loading">Error loading blog. Check content/blog/posts.json</div>`;
+        blogList.innerHTML = `<div class="loading">${t('errorBlog')}</div>`;
       }
 
       window.addEventListener('hashchange', checkHash);
