@@ -252,11 +252,6 @@ class Terminal {
           </div>
           <div class="terminal-title">terminal — visitor@portfolio</div>
           <div class="terminal-controls">
-            <button class="control-btn theme-toggle" 
-                    aria-label="Change theme" 
-                    title="Change theme">
-              <span class="icon">◐</span>
-            </button>
             <button class="control-btn effects-toggle" 
                     aria-label="Toggle effects" 
                     title="Toggle effects">
@@ -281,14 +276,7 @@ class Terminal {
   }
 
   _setupControls() {
-    const themeBtn = this.container.querySelector('.theme-toggle');
     const effectsBtn = this.container.querySelector('.effects-toggle');
-
-    if (themeBtn) {
-      themeBtn.addEventListener('click', () => {
-        eventBus.emit('theme:cycle');
-      });
-    }
 
     if (effectsBtn) {
       effectsBtn.addEventListener('click', () => {
@@ -394,12 +382,6 @@ class Terminal {
             id: sections[num - 1].constructor.id 
           });
         }
-      }
-
-      // T for theme cycling
-      if (e.key === 't' && !e.ctrlKey && !e.metaKey && 
-          document.activeElement.tagName !== 'INPUT') {
-        eventBus.emit('theme:cycle');
       }
     });
   }

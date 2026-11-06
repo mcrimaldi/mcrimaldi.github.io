@@ -114,12 +114,6 @@ function setupKeyboardShortcuts() {
       return;
     }
     
-    // Theme toggle: T
-    if (e.key.toLowerCase() === 't' && !e.ctrlKey && !e.metaKey) {
-      e.preventDefault();
-      eventBus.emit('theme:cycle');
-    }
-    
     // Effects toggle: E
     if (e.key.toLowerCase() === 'e' && !e.ctrlKey && !e.metaKey) {
       e.preventDefault();
@@ -149,9 +143,7 @@ function setupKeyboardShortcuts() {
   // Listen for custom menu events from index.html buttons
   document.addEventListener('terminal:menu', (e) => {
     const action = e.detail?.action;
-    if (action === 'theme') {
-      eventBus.emit('theme:cycle');
-    } else if (action === 'effects') {
+    if (action === 'effects') {
       eventBus.emit('effects:toggleAll');
     } else if (action === 'help') {
       showHelp();
@@ -168,53 +160,13 @@ function showHelp() {
 ║          KEYBOARD SHORTCUTS           ║
 ╠═══════════════════════════════════════╣
 ║  1-5    Open section by number        ║
-║  T      Cycle theme                   ║
 ║  E      Toggle effects                ║
 ║  ESC    Collapse all sections         ║
 ║  ?      Show this help                ║
 ╚═══════════════════════════════════════╝
   `.trim();
   
-  terminal.writeLine(helpText, 'help-output');
-}
-
-/**
- * Setup theme switcher UI
- */
-function setupThemeSwitcher() {
-  const switcher = document.querySelector('.theme-switcher');
-  if (!switcher) return;
-  
-  const themes = themeManager.getAllThemes();
-  
-  themes.forEach(theme => {
-    const btn = document.createElement('button');
-    btn.className = `theme-btn theme-btn--${theme.id}`;
-    btn.title = theme.name;
-    btn.setAttribute('aria-label', `Switch to ${theme.name} theme`);
-    
-    btn.addEventListener('click', () => {
-      themeManager.setTheme(theme.id);
-      updateThemeSwitcherUI();
-    });
-    
-    switcher.appendChild(btn);
-  });
-  
-  // Update active state
-  eventBus.on('theme:changed', updateThemeSwitcherUI);
-  updateThemeSwitcherUI();
-}
-
-/**
- * Update theme switcher button states
- */
-function updateThemeSwitcherUI() {
-  const currentTheme = themeManager.currentTheme;
-  document.querySelectorAll('.theme-btn').forEach(btn => {
-    const isActive = btn.classList.contains(`theme-btn--${currentTheme}`);
-    btn.classList.toggle('active', isActive);
-  });
+  terminal.writeLine(helpText, { className: 'help-output' });
 }
 
 /**
@@ -228,11 +180,6 @@ function initAccessibility() {
   announcer.setAttribute('aria-live', 'polite');
   announcer.setAttribute('aria-atomic', 'true');
   document.body.appendChild(announcer);
-  
-  // Listen for theme changes
-  eventBus.on('theme:changed', ({ theme }) => {
-    announce(`Theme changed to ${theme.name}`);
-  });
   
   // Listen for section changes
   eventBus.on('section:expanded', ({ id }) => {
@@ -305,7 +252,6 @@ async function init() {
     await terminal.init();
     
     // Setup UI components
-    setupThemeSwitcher();
     setupKeyboardShortcuts();
     
     // Setup accessibility

@@ -1,7 +1,7 @@
 /**
  * Purple Pixel — 8-bit synthwave skin
- * Loaded after base.css. Every rule is scoped to body.theme-purple-haze,
- * so the other themes from the switcher keep their original look.
+ * Loaded after base.css. Rules are scoped to body.theme-purple-haze, the
+ * class set by ThemeManager (home) or directly on <body> (/blog, /publications).
  * Fonts: Silkscreen (titles/UI) + Pixelify Sans (body text); the ASCII
  * header stays on IBM Plex Mono because pixel fonts break box-drawing glyphs.
  */
@@ -181,29 +181,13 @@ body.theme-purple-haze .terminal-section.expanded .section-body {
 }
 
 /* =====================================================
-   FOOTER & THEME SWITCHER
+   FOOTER
    ===================================================== */
 
 body.theme-purple-haze .terminal-footer {
   border-top: 2px solid var(--terminal-border-dim);
   padding: 0.75rem 1rem;
 }
-
-body.theme-purple-haze .theme-btn {
-  border: 2px solid var(--terminal-border-dim);
-}
-
-body.theme-purple-haze .theme-btn.active {
-  border-color: var(--pp-yellow);
-  box-shadow: 2px 2px 0 var(--terminal-accent);
-}
-
-/* Switcher buttons are generated as theme-btn--<theme id> */
-body.theme-purple-haze .theme-btn--green-classic { background: #00ff00; }
-body.theme-purple-haze .theme-btn--amber-vintage { background: #ffb000; }
-body.theme-purple-haze .theme-btn--cyan-modern { background: #00ffff; }
-body.theme-purple-haze .theme-btn--purple-haze { background: #cc66ff; }
-body.theme-purple-haze .theme-btn--matrix { background: #00ff41; }
 
 /* =====================================================
    EFFECTS
@@ -261,4 +245,14 @@ body.theme-purple-haze .pub-title a:hover {
     margin: 1rem;
     padding: 1.25rem;
   }
+}
+
+/* Keyboard shortcuts box (?): keep the box-drawing frame aligned */
+body.theme-purple-haze .help-output {
+  white-space: pre;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  color: var(--terminal-accent);
+  overflow-x: auto;
 }
