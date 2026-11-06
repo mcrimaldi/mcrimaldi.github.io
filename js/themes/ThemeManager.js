@@ -7,6 +7,9 @@
 import { eventBus } from '../core/EventBus.js';
 import { config } from '../core/Config.js';
 
+// v2: purple-pixel redesign — a new key so saved choices from the old look don't hide the new default
+const STORAGE_KEY = 'terminal-theme-v2';
+
 class ThemeManager {
   constructor() {
     this.themes = new Map();
@@ -30,7 +33,7 @@ class ThemeManager {
     document.head.appendChild(this.styleElement);
     
     // Load saved theme or default
-    const savedTheme = localStorage.getItem('terminal-theme');
+    const savedTheme = localStorage.getItem(STORAGE_KEY);
     const defaultTheme = config.get('theme.default', 'green-classic');
     const themeToLoad = savedTheme || defaultTheme;
     
@@ -185,28 +188,28 @@ class ThemeManager {
     
     // Purple haze
     this.register('purple-haze', {
-      name: 'Purple Haze',
-      description: 'Synthwave purple vibes',
+      name: 'Purple Pixel',
+      description: '8-bit synthwave purple',
       colors: {
         primary: '#cc66ff',
         primaryDim: '#aa44dd',
         primaryBright: '#dd99ff',
         
-        background: '#0a050a',
-        backgroundLight: '#110811',
-        backgroundLighter: '#1a0f1a',
+        background: '#140a24',
+        backgroundLight: '#1d1033',
+        backgroundLighter: '#2a1748',
         
-        text: '#cc66ff',
-        textDim: '#9944cc',
-        textMuted: '#663399',
+        text: '#e6d3ff',
+        textDim: '#a98ad6',
+        textMuted: '#8a6cba',
         
         accent: '#ff66cc',
         accentDim: '#cc4499',
         
         border: '#cc66ff',
-        borderDim: '#442255',
+        borderDim: '#3d2466',
         
-        hover: '#dd99ff',
+        hover: '#ffd166',
         active: '#eeccff',
         focus: '#ff99dd',
         
@@ -218,7 +221,7 @@ class ThemeManager {
         cursor: '#cc66ff',
         selection: 'rgba(204, 102, 255, 0.3)',
         scrollbar: '#cc66ff',
-        scrollbarTrack: '#1a0f1a',
+        scrollbarTrack: '#1d1033',
         
         glow: '#cc66ff',
         glowIntensity: '0.8'
@@ -305,7 +308,7 @@ class ThemeManager {
     this.applyTheme(theme);
     
     // Save preference
-    localStorage.setItem('terminal-theme', id);
+    localStorage.setItem(STORAGE_KEY, id);
     
     // Update body class
     document.body.className = document.body.className

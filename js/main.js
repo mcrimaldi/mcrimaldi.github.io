@@ -47,7 +47,7 @@ const appConfig = {
     host: 'portfolio'
   },
   theme: {
-    default: 'green-classic',
+    default: 'purple-haze',
     persist: true
   },
   effects: {

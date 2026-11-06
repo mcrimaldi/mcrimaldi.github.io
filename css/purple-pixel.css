@@ -1,0 +1,264 @@
+/**
+ * Purple Pixel — 8-bit synthwave skin
+ * Loaded after base.css. Every rule is scoped to body.theme-purple-haze,
+ * so the other themes from the switcher keep their original look.
+ * Fonts: Silkscreen (titles/UI) + Pixelify Sans (body text); the ASCII
+ * header stays on IBM Plex Mono because pixel fonts break box-drawing glyphs.
+ */
+
+/* =====================================================
+   PALETTE
+   ===================================================== */
+
+body.theme-purple-haze {
+  --pp-night: #0b0516;
+  --pp-dusk: #2a0e3d;
+  --pp-sun-pink: #ff3d8b;
+  --pp-sun-gold: #ffb347;
+  --pp-yellow: #ffd166;
+
+  --terminal-primary: #cc66ff;
+  --terminal-primary-dim: #aa44dd;
+  --terminal-primary-bright: #f0c6ff;
+  --terminal-background: #140a24;
+  --terminal-background-light: #1d1033;
+  --terminal-background-lighter: #2a1748;
+  --terminal-text: #e6d3ff;
+  --terminal-text-dim: #a98ad6;
+  --terminal-text-muted: #8a6cba;
+  --terminal-accent: #ff66cc;
+  --terminal-accent-dim: #cc4499;
+  --terminal-border: #cc66ff;
+  --terminal-border-dim: #3d2466;
+  --terminal-hover: #ffd166;
+  --terminal-active: #ffe399;
+  --terminal-focus: #ffd166;
+  --terminal-success: #66ffb3;
+  --terminal-warning: #ffd166;
+  --terminal-error: #ff6680;
+  --terminal-info: #66ccff;
+  --terminal-cursor: #cc66ff;
+  --terminal-selection: rgba(255, 102, 204, 0.35);
+  --terminal-scrollbar: #cc66ff;
+  --terminal-scrollbar-track: #1d1033;
+  --terminal-glow: rgba(204, 102, 255, 0.35);
+
+  font-family: 'Pixelify Sans', 'IBM Plex Mono', monospace;
+  font-size: 1.05rem;
+  background:
+    linear-gradient(180deg,
+      var(--pp-night) 0%,
+      var(--pp-dusk) 55%,
+      var(--pp-sun-pink) 78%,
+      var(--pp-sun-gold) 86%,
+      var(--pp-dusk) 86.2%,
+      var(--pp-night) 100%) fixed;
+}
+
+/* Perspective pixel grid on the horizon */
+body.theme-purple-haze::before {
+  content: '';
+  position: fixed;
+  inset: 60% 0 0;
+  background:
+    linear-gradient(transparent 0 95%, #ff66cc 95%) 0 0 / 100% 28px,
+    linear-gradient(90deg, transparent 0 97%, #ff66cc 97%) 0 0 / 40px 100%;
+  transform: perspective(300px) rotateX(55deg);
+  transform-origin: top;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.theme-purple-haze .terminal-container,
+body.theme-purple-haze .page-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
+
+body.theme-purple-haze h1,
+body.theme-purple-haze h2,
+body.theme-purple-haze h3,
+body.theme-purple-haze .ascii-subtitle,
+body.theme-purple-haze .section-title,
+body.theme-purple-haze .terminal-title,
+body.theme-purple-haze .terminal-footer,
+body.theme-purple-haze .page-title,
+body.theme-purple-haze .page-nav,
+body.theme-purple-haze .metric-label {
+  font-family: 'Silkscreen', 'IBM Plex Mono', monospace;
+  text-shadow: none;
+}
+
+body.theme-purple-haze .ascii-header {
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0;
+  color: #ff66cc;
+  text-shadow: 4px 4px 0 #5b2a99;
+  border: 0;
+  background: transparent;
+}
+
+body.theme-purple-haze .ascii-subtitle {
+  color: var(--pp-yellow);
+}
+
+body.theme-purple-haze code,
+body.theme-purple-haze pre {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* =====================================================
+   WINDOW (stepped pixel corners)
+   ===================================================== */
+
+body.theme-purple-haze .terminal-window {
+  border: 0;
+  border-radius: 0;
+  background: rgba(20, 10, 36, 0.94);
+  box-shadow: inset 0 0 0 4px var(--terminal-primary);
+  clip-path: polygon(
+    0 8px, 8px 8px, 8px 0,
+    calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%,
+    8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px)
+  );
+}
+
+body.theme-purple-haze .terminal-header {
+  background: linear-gradient(90deg, var(--terminal-primary), var(--terminal-accent));
+  border: 0;
+}
+
+body.theme-purple-haze .terminal-title {
+  color: var(--terminal-background);
+  font-weight: 700;
+}
+
+/* =====================================================
+   SECTIONS
+   ===================================================== */
+
+body.theme-purple-haze .terminal-section {
+  border: 0;
+  border-radius: 0;
+  background: var(--terminal-background-light);
+  box-shadow: inset 0 0 0 2px var(--terminal-border-dim), 4px 4px 0 var(--pp-night);
+}
+
+body.theme-purple-haze .terminal-section:hover {
+  box-shadow: inset 0 0 0 2px var(--terminal-primary-dim), 4px 4px 0 var(--pp-night);
+}
+
+body.theme-purple-haze .terminal-section.expanded {
+  box-shadow: inset 0 0 0 2px var(--terminal-primary), 4px 4px 0 var(--terminal-accent);
+}
+
+body.theme-purple-haze .section-header:hover,
+body.theme-purple-haze .section-header:focus {
+  background: var(--terminal-background-lighter);
+}
+
+body.theme-purple-haze .section-header:hover .section-title,
+body.theme-purple-haze .section-header:focus-visible .section-title {
+  color: var(--terminal-hover);
+}
+
+body.theme-purple-haze .section-title {
+  color: var(--terminal-primary);
+}
+
+body.theme-purple-haze .section-toggle {
+  color: var(--terminal-accent);
+}
+
+body.theme-purple-haze .terminal-section.expanded .section-body {
+  border-top: 2px solid var(--terminal-border-dim);
+}
+
+/* =====================================================
+   FOOTER & THEME SWITCHER
+   ===================================================== */
+
+body.theme-purple-haze .terminal-footer {
+  border-top: 2px solid var(--terminal-border-dim);
+  padding: 0.75rem 1rem;
+}
+
+body.theme-purple-haze .theme-btn {
+  border: 2px solid var(--terminal-border-dim);
+}
+
+body.theme-purple-haze .theme-btn.active {
+  border-color: var(--pp-yellow);
+  box-shadow: 2px 2px 0 var(--terminal-accent);
+}
+
+/* Switcher buttons are generated as theme-btn--<theme id> */
+body.theme-purple-haze .theme-btn--green-classic { background: #00ff00; }
+body.theme-purple-haze .theme-btn--amber-vintage { background: #ffb000; }
+body.theme-purple-haze .theme-btn--cyan-modern { background: #00ffff; }
+body.theme-purple-haze .theme-btn--purple-haze { background: #cc66ff; }
+body.theme-purple-haze .theme-btn--matrix { background: #00ff41; }
+
+/* =====================================================
+   EFFECTS
+   ===================================================== */
+
+body.theme-purple-haze .scanlines.active {
+  opacity: 0.12;
+}
+
+/* =====================================================
+   STANDALONE PAGES (/blog, /publications)
+   ===================================================== */
+
+body.theme-purple-haze .page-container {
+  background: rgba(20, 10, 36, 0.94);
+  box-shadow: inset 0 0 0 4px var(--terminal-primary), 6px 6px 0 var(--terminal-accent);
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+body.theme-purple-haze .page-title {
+  color: var(--terminal-accent);
+  text-shadow: 3px 3px 0 #5b2a99;
+}
+
+body.theme-purple-haze .page-header,
+body.theme-purple-haze .metrics-bar {
+  border-color: var(--terminal-border-dim);
+}
+
+body.theme-purple-haze .metrics-bar {
+  border-width: 2px;
+  background: var(--terminal-background-light);
+}
+
+body.theme-purple-haze .blog-tag {
+  border-radius: 0;
+  border-width: 2px;
+  border-color: var(--terminal-border-dim);
+}
+
+body.theme-purple-haze .blog-entry:hover .blog-title,
+body.theme-purple-haze .pub-title a:hover {
+  color: var(--pp-yellow);
+}
+
+/* =====================================================
+   SMALL SCREENS
+   ===================================================== */
+
+@media (max-width: 768px) {
+  body.theme-purple-haze { font-size: 1rem; }
+  body.theme-purple-haze .page-container {
+    margin: 1rem;
+    padding: 1.25rem;
+  }
+}
