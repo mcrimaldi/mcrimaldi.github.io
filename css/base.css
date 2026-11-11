@@ -516,105 +516,170 @@ pre code {
 }
 
 /* =====================================================
-   PROJECT LIST (ls -la style)
+   SCIENTIFIC COLLABORATIONS (ls -la style, grouped)
    ===================================================== */
 
-.project-list {
-  font-size: 0.875rem;
-}
-
-.project-header {
+.collab-intro {
   color: var(--terminal-text-dim);
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--terminal-border-dim);
+  margin: 0 0 0.75rem;
 }
 
-.project-item {
+.collab-toolbar {
   display: flex;
-  padding: 0.375rem 0;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  border-radius: 2px;
-}
-
-.project-item:hover {
-  background: var(--terminal-background-lighter);
-}
-
-.project-item.selected {
-  background: var(--terminal-selection);
-}
-
-.project-perms { 
-  width: 90px; 
-  color: var(--terminal-text-dim); 
-}
-
-.project-size { 
-  width: 60px; 
-  text-align: right;
-  color: var(--terminal-text-dim);
-  margin-right: 1rem;
-}
-
-.project-date { 
-  width: 70px; 
-  color: var(--terminal-text-dim); 
-  margin-right: 1rem;
-}
-
-.project-name { 
-  color: var(--terminal-accent);
-  flex: 1;
-}
-
-.project-name::before {
-  content: './';
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
   color: var(--terminal-text-muted);
 }
 
-/* Project detail panel */
-.project-detail {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: var(--terminal-background);
-  border: 1px solid var(--terminal-border-dim);
+.collab-toggle-all {
+  font: inherit;
+  color: var(--terminal-primary);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
-.project-detail-title {
-  color: var(--terminal-primary-bright);
-  margin-bottom: 0.5rem;
-}
+.collab-toggle-all:hover { color: var(--terminal-hover); }
 
-.project-detail-desc {
-  color: var(--terminal-text);
-  margin-bottom: 1rem;
-}
+.collab-group + .collab-group { margin-top: 1.5rem; }
 
-.project-tech {
+.collab-group-title {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.375rem;
+  border-bottom: 1px solid var(--terminal-border-dim);
+  font-size: 0.95rem;
+  font-weight: normal;
 }
 
-.project-tech-tag {
-  font-size: 0.75rem;
-  padding: 0.125rem 0.5rem;
-  background: var(--terminal-background-lighter);
-  border: 1px solid var(--terminal-border-dim);
+.collab-dir { color: var(--terminal-accent); }
+.collab-group-label { color: var(--terminal-primary-bright); }
+
+.collab-count {
+  margin-left: auto;
+  color: var(--terminal-text-muted);
+  font-size: 0.8rem;
+}
+
+.collab-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.collab-row {
+  display: grid;
+  grid-template-columns: 6.5rem 1.5rem minmax(0, 1fr) 1rem;
+  align-items: start;
+  gap: 0 0.5rem;
+  width: 100%;
+  padding: 0.375rem 0.25rem;
+  font: inherit;
+  text-align: left;
+  color: var(--terminal-text);
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.collab-row:hover { background: var(--terminal-background-lighter); }
+.collab-entry.open > .collab-row { background: var(--terminal-selection); }
+
+.collab-row:focus-visible,
+.collab-toggle-all:focus-visible {
+  outline: 1px dashed var(--terminal-focus);
+  outline-offset: 2px;
+}
+
+.collab-perms,
+.collab-links {
+  color: var(--terminal-text-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.collab-links { text-align: right; }
+
+.collab-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.collab-partners { color: var(--terminal-primary-bright); }
+.collab-sep { color: var(--terminal-text-muted); }
+
+.collab-units {
+  color: var(--terminal-text-dim);
+  font-size: 0.85rem;
+}
+
+.collab-caret {
+  color: var(--terminal-accent);
+  transition: transform 0.2s ease;
+}
+
+.collab-entry.open .collab-caret { transform: rotate(90deg); }
+
+.collab-panel {
+  margin: 0.25rem 0 0.75rem 9.25rem;
+  padding: 0.75rem 1rem;
+  border-left: 2px solid var(--terminal-accent);
+  background: var(--terminal-background);
+}
+
+.collab-unit + .collab-unit { margin-top: 0.75rem; }
+
+.collab-unit-name {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  font-weight: normal;
   color: var(--terminal-accent);
 }
 
-.project-links {
-  display: flex;
-  gap: 1rem;
+.collab-activities {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: none;
 }
 
-.project-link {
-  font-size: 0.8125rem;
-  color: var(--terminal-primary);
+.collab-activities li {
+  position: relative;
+  margin: 0.2rem 0;
+  color: var(--terminal-text);
+}
+
+.collab-activities li::before {
+  content: '→';
+  position: absolute;
+  left: -1.25rem;
+  color: var(--terminal-text-muted);
+}
+
+.collab-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+}
+
+.collab-empty { color: var(--terminal-error); }
+
+@media (max-width: 600px) {
+  .collab-row { grid-template-columns: minmax(0, 1fr) 1rem; }
+  .collab-perms,
+  .collab-links { display: none; }
+  .collab-panel { margin-left: 0.25rem; padding: 0.5rem 0.75rem; }
 }
 
 /* =====================================================
