@@ -22,7 +22,7 @@
   
   <!-- Stylesheets with cache busting -->
   <link rel="stylesheet" href="css/base.css?v=2.2">
-  <link rel="stylesheet" href="css/purple-pixel.css?v=2.2">
+  <link rel="stylesheet" href="css/purple-pixel.css?v=2.3">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨</text></svg>">
@@ -144,6 +144,9 @@
         
       </div>
       
+      <!-- Drone survey animation (js/effects/DroneSurvey.js) -->
+      <div id="drone-survey"></div>
+
       <!-- Terminal Footer -->
       <footer class="terminal-footer">
         <div class="footer-left">
@@ -172,6 +175,12 @@
   
   <!-- Application Entry Point -->
   <script type="module" src="js/main.js?v=2.2"></script>
+
+  <!-- Drone survey animation -->
+  <script type="module">
+    import { mountDroneSurvey } from './js/effects/DroneSurvey.js?v=2.3';
+    mountDroneSurvey(document.getElementById('drone-survey'));
+  </script>
   
   <!-- Menu button handlers -->
   <script>

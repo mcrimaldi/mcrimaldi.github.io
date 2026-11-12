@@ -1,0 +1,70 @@
+{
+  "categories": [
+    {
+      "name": "Scientific and Analytical Skills",
+      "skills": [
+        { "name": "Gas Chromatography (GC) for separation and identification of volatile compounds" },
+        { "name": "High Performance Liquid Chromatography (HPLC) for quantitative and qualitative analysis" },
+        { "name": "Mass Spectrometry (MS) and hyphenated techniques (GC-MS, LC-MS)" },
+        { "name": "Inductively Coupled Plasma-Mass Spectrometry (ICP-MS) for trace elemental analysis" },
+        { "name": "Measurement of Higher Heating Value (HHV) and Lower Heating Value (LHV) using a Mahler bomb calorimeter" },
+        { "name": "Proximate and ultimate analysis of biomass: chip size, volatile matter, ash content, moisture, fixed carbon, carbon, hydrogen, nitrogen and sulfur" },
+        { "name": "Use of thermal cameras for infrared thermography in scientific and diagnostic applications" },
+        { "name": "Acquisition and analysis of hyperspectral and multispectral imagery for surface and crop characterisation" },
+        { "name": "Digital hemispherical photography for estimating forest canopy properties using CAN-EYE software" }
+      ]
+    },
+    {
+      "name": "Electronics Skills",
+      "skills": [
+        { "name": "Execution of basic electrical measurements on low-voltage systems (voltage, current, resistance, continuity) using digital and analogue multimeters" },
+        { "name": "Soldering and desoldering of SMD and through-hole electronic components on printed circuit boards (PCBs) using soldering stations and hot-air rework tools" },
+        { "name": "Repair and maintenance of low-voltage electrical circuits" },
+        { "name": "Design, prototyping and assembly of electronic circuits on stripboard / perfboard" },
+        { "name": "Repair of signal cables (coaxial, multipolar, shielded) and execution of wiring harnesses to technical specifications" },
+        { "name": "Hardware diagnosis and troubleshooting on personal computers (desktops and servers)" },
+        { "name": "Knowledge of the RS-232 serial communication protocol" },
+        { "name": "Systematic troubleshooting of electronic laboratory devices and equipment" },
+        { "name": "Disassembly, inspection, maintenance and reassembly of complex electronic apparatus" },
+        { "name": "Design and assembly of IoT systems based on M5Stack, LattePanda, STM32, Arduino and Raspberry Pi platforms" },
+        { "name": "Integration of sensors on ESP32, NodeMCU and single-board electronics for in-field data acquisition" },
+        { "name": "Experience with IMU (Inertial Measurement Unit) sensors, RTK modules for precision positioning and vibration sensors" },
+        { "name": "Configuration and maintenance of on-field weather stations (temperature, humidity, radiation, wind, precipitation)" },
+        { "name": "Design, assembly and maintenance of multirotor drones for scientific applications" },
+        { "name": "Planning and execution of flight missions for photogrammetric, multispectral and thermal surveys" },
+        { "name": "Integration of scientific payloads (thermal, multispectral and hyperspectral cameras) on UAV platforms" },
+        { "name": "CAD design of mechanical components and enclosures for scientific instrumentation (Fusion 360, SolidWorks, Blender)" },
+        { "name": "Full management of the FDM/FFF 3D printing workflow: slicing (OrcaSlicer, CURA, PrusaSlicer), printing and post-processing" }
+      ]
+    },
+    {
+      "name": "IT Skills",
+      "skills": [
+        { "name": "Installation, configuration and administration of GNU/Linux systems (Debian, Ubuntu, Mint)" },
+        { "name": "Installation, configuration and management of major Microsoft Windows operating systems (client and server)" },
+        { "name": "Advanced use of the Linux/Bash shell: file and filesystem management, networking commands (ip, ss, ping, traceroute, nslookup, curl), process control (ps, top, kill, systemctl), system commands and automation via scripting" },
+        { "name": "Use of the Windows command line (CMD, PowerShell) for administration and diagnostics" },
+        { "name": "Knowledge of programming languages: Python, C#, R" },
+        { "name": "Development of scripts for ICT service and process automation (Bash, Python)" },
+        { "name": "Ability to write scripts for monitoring, backup, deployment and system maintenance" },
+        { "name": "Basic knowledge of network equipment: media converters, switches, hubs, wireless access points" },
+        { "name": "Termination of RJ-45 connectors on UTP/STP network cables according to T-568A and T-568B standards" },
+        { "name": "Configuration and use of remote desktop connections (SSH, RDP, VNC)" },
+        { "name": "Knowledge of main Internet services, both client-side and server-side (HTTP, DNS, DHCP, FTP, SMTP/IMAP)" },
+        { "name": "Knowledge of major virtualisation platforms (VMware, VirtualBox, KVM/QEMU, Proxmox)" },
+        { "name": "Use of the Microsoft Office suite (Word, Excel, PowerPoint, Outlook) and equivalent tools" },
+        { "name": "Acquisition and preparation of datasets for Deep Learning model training" },
+        { "name": "Dataset annotation using LabelBox, CVAT and RoboFlow platforms" },
+        { "name": "Development and training of Deep Learning algorithms using TensorFlow, Keras and PyTorch frameworks" },
+        { "name": "Implementation of object detection and segmentation pipelines with Ultralytics (YOLOv8+) and RoboFlow" }
+      ]
+    },
+    {
+      "name": "Further Skills",
+      "skills": [
+        { "name": "Knowledge of industrial temperature measurement systems based on PT100 (RTD) sensors" },
+        { "name": "Basic knowledge of MATLAB and GNU Octave for data processing, numerical analysis and automation of scientific calculations" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+{
+  "intro": "Teaching activities and scientific collaborations with research groups, laboratories and institutions, in Italy and abroad.",
+  "groups": [
+    {
+      "id": "teaching",
+      "dir": "teaching",
+      "title": "Teaching & Training",
+      "entries": [
+        {
+          "id": "phd-ai-agrifood",
+          "partners": [
+            "National PhD Course in AI for Agrifood and Environment (XXXIX cycle)"
+          ],
+          "units": [
+            {
+              "name": "Use and applications of artificial intelligence (AI) in agriculture",
+              "activities": [
+                "Seminar lecturer for students of the national PhD course in AI for Agrifood and Environment."
+              ]
+            }
+          ],
+          "tags": [
+            "Artificial Intelligence",
+            "Agriculture",
+            "PhD seminar"
+          ]
+        },
+        {
+          "id": "morano-caivano",
+          "partners": [
+            "Istituto Superiore F. Morano, Caivano (NA)"
+          ],
+          "units": [
+            {
+              "name": "Agriculture 4.0",
+              "activities": [
+                "Teaching assignment as an external expert for the PNRR-funded project “STEM with English”."
+              ]
+            }
+          ],
+          "tags": [
+            "Agriculture 4.0",
+            "STEM",
+            "PNRR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agricultural-sciences",
+      "dir": "agricultural-sciences",
+      "title": "Department of Agricultural Sciences",
+      "entries": [
+        {
+          "id": "durso",
+          "partners": [
+            "Prof. Guido D'Urso"
+          ],
+          "units": [
+            {
+              "name": "Agricultural, Forestry and Biosystems Engineering Lab",
+              "activities": [
+                "Analysis of remote sensing data in GIS environment.",
+                "Development and programming of data input-forcing techniques."
+              ]
+            }
+          ],
+          "tags": [
+            "Remote Sensing",
+            "GIS",
+            "Programming"
+          ]
+        },
+        {
+          "id": "chirico",
+          "partners": [
+            "Prof. Giovanni Battista Chirico"
+          ],
+          "units": [
+            {
+              "name": "Ecohydraulics Lab",
+              "activities": [
+                "Development, study and installation of sensors on riparian vegetation for bulk drag calculation.",
+                "Validation of data using multispectral images acquired via UAV.",
+                "3D scanning and reconstruction of riparian plants to study the interaction with water flow."
+              ]
+            }
+          ],
+          "tags": [
+            "Sensors",
+            "UAV",
+            "Multispectral",
+            "3D Scanning"
+          ]
+        },
+        {
+          "id": "romano",
+          "partners": [
+            "Prof. Nunzio Romano"
+          ],
+          "units": [
+            {
+              "name": "C.I.R.AM.",
+              "activities": [
+                "Hyperspectral, multispectral and thermal soil surveys using drones.",
+                "Near-surface soil moisture measurements with TDR, capacitive probes and spectroscopic analysis."
+              ]
+            }
+          ],
+          "tags": [
+            "UAV",
+            "Hyperspectral",
+            "Thermal",
+            "Soil Moisture",
+            "TDR"
+          ]
+        },
+        {
+          "id": "palladino",
+          "partners": [
+            "Prof. Mario Palladino"
+          ],
+          "units": [
+            {
+              "name": "Hydrology Lab",
+              "activities": [
+                "Development and implementation of a sensor network for monitoring water–soil interactions.",
+                "Design of integrated systems for monitoring and managing domestic micro-greenhouses."
+              ]
+            }
+          ],
+          "tags": [
+            "Sensor Networks",
+            "Hydrology",
+            "Monitoring Systems"
+          ]
+        },
+        {
+          "id": "vingiani",
+          "partners": [
+            "Prof. Simona Vingiani"
+          ],
+          "units": [
+            {
+              "name": "CRISP – Soil Science Lab",
+              "activities": [
+                "Design and implementation of the hardware components of a DSS for the remote management of vineyard irrigation, integrating soil sensors in a local network according to the IoT approach."
+              ]
+            }
+          ],
+          "tags": [
+            "IoT",
+            "DSS",
+            "Soil Sensors",
+            "Irrigation"
+          ]
+        },
+        {
+          "id": "giannino",
+          "partners": [
+            "Prof. Francesco Giannino"
+          ],
+          "units": [
+            {
+              "name": "Laboratory of Applied Ecology and System Dynamics",
+              "activities": [
+                "Development of a biological-mathematical model of tree growth and its programming in a 3D environment."
+              ]
+            }
+          ],
+          "tags": [
+            "Modelling",
+            "3D Programming",
+            "System Dynamics"
+          ]
+        },
+        {
+          "id": "sarghini",
+          "partners": [
+            "Prof. Fabrizio Sarghini"
+          ],
+          "units": [
+            {
+              "name": "DroneLAB",
+              "activities": [
+                "Precision agriculture UAV sensors and platforms: development, applications and data production/analysis.",
+                "Development of sensors and of a tractor-mounted control unit to prevent vehicle rollover.",
+                "3D printing: design and manufacturing of experimental prototypes."
+              ]
+            },
+            {
+              "name": "CoffeeLAB",
+              "activities": [
+                "Design and development of food analysis sensors, data collection and processing."
+              ]
+            }
+          ],
+          "tags": [
+            "UAV",
+            "Precision Agriculture",
+            "Sensors",
+            "3D Printing",
+            "Food Analysis"
+          ]
+        },
+        {
+          "id": "maggio-cirillo",
+          "partners": [
+            "Prof. Albino Maggio",
+            "Dr. Valerio Cirillo"
+          ],
+          "units": [
+            {
+              "name": "Agronomy and Crop Sciences Lab",
+              "activities": [
+                "Development and application of deep-learning algorithms for in-field, real-time weed recognition.",
+                "Aerial multispectral surveys for the study of crop–weed interactions."
+              ]
+            }
+          ],
+          "tags": [
+            "Deep Learning",
+            "Computer Vision",
+            "UAV",
+            "Multispectral"
+          ]
+        },
+        {
+          "id": "saracino-saulino-bonanomi",
+          "partners": [
+            "Prof. Antonio Saracino",
+            "Dr. Luigi Saulino",
+            "Prof. Giuliano Bonanomi"
+          ],
+          "units": [
+            {
+              "name": "Forest Ecology and Silviculture Lab",
+              "activities": [
+                "UAV aerial forest surveys.",
+                "Hemispherical image analysis.",
+                "Study and development of sensors for forest monitoring."
+              ]
+            }
+          ],
+          "tags": [
+            "UAV",
+            "Forest Monitoring",
+            "Image Analysis",
+            "Sensors"
+          ]
+        },
+        {
+          "id": "faugno",
+          "partners": [
+            "Prof. Salvatore Faugno"
+          ],
+          "units": [
+            {
+              "name": "Agricultural Mechanics and Biomass Lab",
+              "activities": [
+                "Setting up and management of the laboratory for biomass analysis.",
+                "Development of sensors for evaluating the calorific value of biomasses and their main characteristics (moisture, ash content, particle size)."
+              ]
+            }
+          ],
+          "tags": [
+            "Biomass",
+            "Sensors",
+            "Lab Management"
+          ]
+        },
+        {
+          "id": "pindozzi-cervelli",
+          "partners": [
+            "Prof. Stefania Pindozzi",
+            "Prof. Elena Cervelli"
+          ],
+          "units": [
+            {
+              "name": "Rural Building and Agro-Forestry Landscape Lab",
+              "activities": [
+                "Study, development and installation of sensors for barns and animal husbandry.",
+                "Photogrammetric and topographic surveys and analysis of the acquired data.",
+                "Sensor development for field and spatial-scale surveys, photo-interpretation, remote sensing and drone-supported orthophotos.",
+                "Computation and interpretation of environmental indices.",
+                "Data acquisition, analysis and processing in GIS environment; development of spatial analysis processes.",
+                "Creation of a virtual environment as a decision support platform for land use management and planning."
+              ]
+            }
+          ],
+          "tags": [
+            "Sensors",
+            "Photogrammetry",
+            "GIS",
+            "Remote Sensing",
+            "DSS"
+          ]
+        },
+        {
+          "id": "masucci-difrancia-sannino",
+          "partners": [
+            "Prof. Felicia Masucci",
+            "Prof. Antonio Di Francia",
+            "Dr. Maura Sannino"
+          ],
+          "units": [
+            {
+              "name": "Livestock and Animal Production Lab",
+              "activities": [
+                "Deployment of sensors for animal welfare tracking in automatic milking systems (AMS).",
+                "Study of calf behaviour in relation to the introduction of automatic feeding systems."
+              ]
+            }
+          ],
+          "tags": [
+            "Precision Livestock",
+            "Animal Welfare",
+            "Sensors"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "other-institutions",
+      "dir": "other-institutions",
+      "title": "Other Departments and Institutions",
+      "entries": [
+        {
+          "id": "maffucci-szn",
+          "partners": [
+            "Dr. Fulvio Maffucci"
+          ],
+          "units": [
+            {
+              "name": "Stazione Zoologica Anton Dohrn",
+              "activities": [
+                "Photogrammetric surveys of the coastal nesting habitat of Caretta caretta and proposals for the advanced management of the beaches affected by the phenomenon."
+              ]
+            }
+          ],
+          "tags": [
+            "Photogrammetry",
+            "UAV",
+            "Coastal Habitats",
+            "Conservation"
+          ]
+        },
+        {
+          "id": "sannino-physics",
+          "partners": [
+            "Dr. Alessia Sannino"
+          ],
+          "units": [
+            {
+              "name": "Physics Department",
+              "activities": [
+                "Development, installation and study on the use of atmospheric LiDAR to assess the forest microclimate and its interaction with the atmospheric composition."
+              ]
+            }
+          ],
+          "tags": [
+            "LiDAR",
+            "Atmospheric Physics",
+            "Forest Microclimate"
+          ]
+        },
+        {
+          "id": "deussen-konstanz",
+          "partners": [
+            "Prof. Oliver Deussen"
+          ],
+          "units": [
+            {
+              "name": "Visual Computing Lab, University of Konstanz (DE)",
+              "activities": [
+                "3D rendering and programming of plants."
+              ]
+            }
+          ],
+          "tags": [
+            "3D Rendering",
+            "Computer Graphics",
+            "Plant Modelling"
+          ]
+        },
+        {
+          "id": "korshin",
+          "partners": [
+            "Prof. Gregory Korshin"
+          ],
+          "units": [
+            {
+              "name": "University of Washington, Seattle (USA), Environmental Engineering Lab",
+              "activities": [
+                "Development of sensors and techniques for galvanic corrosion measurement.",
+                "Patent proposal for the developed sensor technology."
+              ]
+            }
+          ],
+          "tags": [
+            "Sensors",
+            "Corrosion",
+            "Patent"
+          ]
+        }
+      ]
+    }
+  ]
+}

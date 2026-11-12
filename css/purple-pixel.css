@@ -256,3 +256,44 @@ body.theme-purple-haze .help-output {
   color: var(--terminal-accent);
   overflow-x: auto;
 }
+
+/* =====================================================
+   DRONE SURVEY ANIMATION (js/effects/DroneSurvey.js)
+   ===================================================== */
+
+.drone-survey {
+  position: relative;
+  margin: 0 1.5rem 1.5rem;
+  background: #140a24;
+  box-shadow: inset 0 0 0 2px #3d2466, 4px 4px 0 #0b0516;
+  padding: 2px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.drone-survey__canvas {
+  display: block;
+  width: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.drone-survey__hud {
+  position: absolute;
+  top: 0.5rem;
+  font-family: 'Silkscreen', 'IBM Plex Mono', monospace;
+  font-size: 0.625rem;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: #a98ad6;
+  white-space: pre;
+  pointer-events: none;
+}
+
+.drone-survey__hud--left { left: 0.75rem; color: #ff66cc; }
+.drone-survey__hud--right { right: 0.75rem; }
+
+@media (max-width: 520px) {
+  .drone-survey { margin: 0 1rem 1rem; }
+  .drone-survey__hud--right { display: none; }
+}
