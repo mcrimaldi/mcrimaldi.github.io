@@ -3,8 +3,9 @@
  * 8-bit canvas animation: a survey drone flies over crops and trees,
  * scanning them (purple = to survey, green = surveyed).
  * Loops forever (the world wraps seamlessly every 9 fields).
- * Self-contained: no dependencies, pauses when off-screen or tab hidden,
- * and renders a single still frame when the user prefers reduced motion.
+ * Self-contained: no dependencies, pauses only when off-screen or tab hidden.
+ * It always animates, also when the OS has animations turned off
+ * (slow scroll, no flashing).
  */
 
 const C = {
@@ -258,7 +259,6 @@ export function mountDroneSurvey(host) {
   }
 
   // ---- loop control ----
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   let raf = 0, visible = true, start = performance.now(), lastFrame = -1;
 
   const tick = (now) => {
@@ -269,25 +269,22 @@ export function mountDroneSurvey(host) {
     schedule();
   };
   const schedule = () => {
-    if (!raf && visible && !document.hidden && !reduce.matches) raf = requestAnimationFrame(tick);
+    if (!raf && visible && !document.hidden) raf = requestAnimationFrame(tick);
   };
-  const still = () => { lastFrame = -1; render(reduce.matches ? 9 : (performance.now() - start) / 1000); };
+  const still = () => { lastFrame = -1; render((performance.now() - start) / 1000); };
 
   const ro = new ResizeObserver(() => { resize(); still(); });
   ro.observe(host);
   const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; schedule(); });
   io.observe(host);
   const onVis = () => schedule();
-  const onMotion = () => { still(); schedule(); };
   document.addEventListener('visibilitychange', onVis);
-  reduce.addEventListener('change', onMotion);
 
   resize(); still(); schedule();
 
   return () => {
     cancelAnimationFrame(raf); ro.disconnect(); io.disconnect();
     document.removeEventListener('visibilitychange', onVis);
-    reduce.removeEventListener('change', onMotion);
     host.replaceChildren(); delete host.dataset.droneMounted;
   };
 }
